@@ -1,0 +1,33 @@
+body { margin: 0; height: 100vh; } 
+* { font-family: Arial, sans-serif; margin: auto;}
+ul { margin: 10px; padding: 0; list-style-type: none;}
+
+div#main {
+    height: 100vh;
+    overflow: hidden;
+}
+
+#input-container {
+    position: relative;
+    float: left;
+    width: 60%;
+    display: grid;
+    gap: 4rem;
+    grid-auto-rows: 5rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    align-items: center;
+    justify-items: center;
+}
+#response-container {
+    width: 35%;
+    position: relative;
+    float: right;
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: 5rem;
+    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+}
+
+@media screen and (max-width: 900px) {
+    div#main { display: block;}
+}
