@@ -52,7 +52,7 @@ async function main() {
     porcentaje_masa_f.calcValue();
     for(let i of Object.entries(values)) {
       let bool = false;
-      if(issue_arr.some(val => val == i[1].id) || i[1].value === null) bool = true 
+      if(issue_arr.some(val => val === i[1].id) || i[1].value === null) bool = true 
       i[1].changeStyle(bool)
     }
     issue_arr = []

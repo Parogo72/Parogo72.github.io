@@ -1,11 +1,6 @@
-body { margin: 0; height: 100vh; } 
-* { font-family: Arial, sans-serif; margin: auto;}
+body { margin: 0;  } 
+* { font-family: 'Roboto', sans-serif; margin: auto; font-size: 17px; font-weight:300; text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.219);}
 ul { margin: 10px; padding: 0; list-style-type: none;}
-
-div#main {
-    height: 100vh;
-    overflow: hidden;
-}
 
 #input-container {
     position: relative;
@@ -13,7 +8,7 @@ div#main {
     width: 60%;
     display: grid;
     gap: 4rem;
-    grid-auto-rows: 5rem;
+    grid-auto-rows: 7rem;
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     align-items: center;
     justify-items: center;
@@ -27,6 +22,7 @@ div#main {
     grid-auto-rows: 5rem;
     grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
 }
+
 
 @media screen and (max-width: 900px) {
     div#main { display: block;}

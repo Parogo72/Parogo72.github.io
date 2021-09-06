@@ -1,15 +1,16 @@
+let current = 0;
 function dropdown(a) { 
-    if (a[0].className.indexOf("show") == -1) {
-        a[0].className += " show";
-        a[0].parentNode.style.backgroundColor = "#959595"
-        a[0].parentNode.style.zIndex = "1";
+    if (a[0].parentNode.className.indexOf("showed") == -1) {
+        current++;
+        a[0].parentNode.className += " showed";
+        a[0].parentNode.style.zIndex = current;
         a.shift()
-        a.forEach(i => i.classList.toggle("show"));   
+        Array.from(a[0].children).forEach(i => i.classList.toggle("show"));   
     } else { 
-        a[0].className = a[0].className.replace(" show", "");
-        a[0].parentNode.style.backgroundColor = ""
+        a[0].parentNode.className = a[0].parentNode.className.replace(" showed", "");
+        a[0].parentNode.style.zIndex = current;
         a.shift()
-        a.forEach(i => i.classList.remove("show"));   
+        Array.from(a[0].children).forEach(i => i.classList.remove("show"));   
     }
 }
 

@@ -28,7 +28,7 @@ let replace_var = (s) => {
 const check_var = (id, ans, i) => {
     let obj = values[id];
     let val = obj.calcValue()
-    if(!isNaN(parseFloat(val)) && Math.abs(val - ans) > 0.001 && !isNaN(ans)) {
+    if(!isNaN(parseFloat(val)) && Math.abs(val - ans) > 0.001 && !isNaN(ans) || ans < 0) {
         issue_arr.push(id)
     } 
     return !values[id].value && values[id].value !== 0;

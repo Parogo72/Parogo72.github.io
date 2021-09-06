@@ -22,55 +22,121 @@
 	<body>
 		<div class="main" role="main" id="main">
 			<ul class="input" id="input-container">
+				<!-- MASAS -->
+
+				<li class="dropdown" >
+					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn">Masas</button>
+					<ul class="dropul">
+						<li name="myDropdown" class="dropdown_input_value">
+							<label for= "m_s"><span class="lbl-t">Masa soluto</span></label>
+							<input type="number" class="ipt" id="m_s" min="0"/>
+						</li>
+						<li name="myDropdown" class="dropdown_input_value">
+							<label for= "m_d"><span class="lbl-t">Masa disolvente</span></label>
+							<input type="number" class="ipt" id="m_d" min="0"/>
+						</li>
+						<li name="myDropdown" class="dropdown_input_value">
+							<label for= "m_D"><span class="lbl-t">Masa disolución</span></label>
+							<input type="number" class="ipt" id="m_D" min="0"/>
+						</li>
+					</ul>
+				</li>
+
+				<!-- MASAS END -->
+
+				<!-- VOLUMENES -->
+
+				<li class="dropdown" >
+					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn">Volumenes</button>
+					<ul class="dropul">
+						<li name="myDropdown" class="dropdown_input_value">
+							<label for= "v_s"><span class="lbl-t">Volumen soluto</span></label>
+							<input type="number" class="ipt" id="v_s" min="0"/>
+						</li>
+						<li name="myDropdown" class="dropdown_input_value">
+							<label for= "v_d"><span class="lbl-t">Volumen disolvente</span></label>
+							<input type="number" class="ipt" id="v_d" min="0"/>
+						</li>
+						<li name="myDropdown" class="dropdown_input_value">
+							<label for= "v_D"><span class="lbl-t">Volumen disolución</span></label>
+							<input type="number" class="ipt" id="v_D" min="0"/>
+						</li>
+					</ul>
+				</li>
+
+				<!-- VOLUMENES END -->
+
+				<!-- DENSIDADES -->
+
+				<li class="dropdown" >
+					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn">Densidades</button>
+					<ul class="dropul">
+						<li name="myDropdown" class="dropdown_input_value">
+							<label for= "d_s"><span class="lbl-t">Densidad soluto</span></label>
+							<input type="number" class="ipt" id="d_s" min="0"/>
+						</li>
+						<li name="myDropdown" class="dropdown_input_value">
+							<label for= "d_d"><span class="lbl-t">Densidad disolvente</span></label>
+							<input type="number" class="ipt" id="d_d" min="0"/>
+						</li>
+						<li name="myDropdown" class="dropdown_input_value">
+							<label for= "d_D"><span class="lbl-t">Densidad disolución</span></label>
+							<input type="number" class="ipt" id="d_D" min="0"/>
+						</li>
+					</ul>
+				</li>
+
+				<!-- DENSIDADES END -->
+
+				<!-- MASAS MOLARES -->
+
+				<li class="dropdown" >
+					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn">Masas Molares</button>
+					<ul class="dropul">
+						<li name="myDropdown" class="dropdown_input_value">
+							<label for= "m_mol_s"><span class="lbl-t">Masa molar soluto</span></label>
+							<input type="text" class="ipt" id="m_mol_s" min="0"/>
+						</li>
+						<li name="myDropdown" class="dropdown_input_value">
+							<label for= "m_mol_d"><span class="lbl-t">Masa molar disolvente</span></label>
+							<input type="text" class="ipt" id="m_mol_d" min="0"/>
+						</li>
+						<li name="myDropdown" class="dropdown_input_value">
+							<label for= "m_mol_D"><span class="lbl-t">Masa molar disolución</span></label>
+							<input type="text" class="ipt" id="m_mol_D" min="0"/>
+						</li>
+					</ul>
+				</li>
+
+				<!-- MASAS MOLARES END -->
+
+				<!-- NUMERO DE MOLES -->
+
+				<li class="dropdown" >
+					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn">Numero de Moles</button>
+					<ul class="dropul">
+						<li name="myDropdown" class="dropdown_input_value">
+							<label for= "n_s"><span class="lbl-t">Numero Moles soluto</span></label>
+							<input type="number" class="ipt" id="n_s" min="0"/>
+						</li>
+						<li name="myDropdown" class="dropdown_input_value">
+							<label for= "n_d"><span class="lbl-t">Numero Moles disolvente</span></label>
+							<input type="number" class="ipt" id="n_d" min="0"/>
+						</li>
+						<li name="myDropdown" class="dropdown_input_value">
+							<label for= "n_D"><span class="lbl-t">Numero Moles disolución</span></label>
+							<input type="number" class="ipt" id="n_D" min="0"/>
+						</li>
+					</ul>
+				</li>
+
+				<!-- NUMERO DE MOLES END -->
+
 				<li class="input_value">
 					<label for= "v_a"><span class="lbl-t">Volumenes Aditivos</span></label>
 					<input type="checkbox" class="ipt" id="v_a"/>
 				</li>
-				<div class="dropdown" >
-					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn">Masas</button>
-					<li name="myDropdown" class="dropdown_input_value">
-						<label for= "m_s"><span class="lbl-t">Masa Soluto</span></label>
-						<input type="number" class="ipt" id="m_s" min="0"/>
-					</li>
-					<li name="myDropdown" class="dropdown_input_value">
-						<label for= "m_d"><span class="lbl-t">Masa Disolvente</span></label>
-						<input type="number" class="ipt" id="m_d" min="0"/>
-					</li>
-					<li name="myDropdown" class="dropdown_input_value">
-						<label for= "m_D"><span class="lbl-t">Masa Disolución</span></label>
-						<input type="number" class="ipt" id="m_D" min="0"/>
-					</li>
-				</div>
-				<div class="dropdown" >
-					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn">Volumenes</button>
-					<li name="myDropdown" class="dropdown_input_value">
-						<label for= "v_s"><span class="lbl-t">Volumen Soluto</span></label>
-						<input type="number" class="ipt" id="v_s" min="0"/>
-					</li>
-					<li name="myDropdown" class="dropdown_input_value">
-						<label for= "v_d"><span class="lbl-t">Volumen Disolvente</span></label>
-						<input type="number" class="ipt" id="v_d" min="0"/>
-					</li>
-					<li name="myDropdown" class="dropdown_input_value">
-						<label for= "v_D"><span class="lbl-t">Volumen Disolución</span></label>
-						<input type="number" class="ipt" id="v_D" min="0"/>
-					</li>
-				</div>
-				<div class="dropdown" >
-					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn">Densidades</button>
-					<li name="myDropdown" class="dropdown_input_value">
-						<label for= "d_s"><span class="lbl-t">Densidad Soluto</span></label>
-						<input type="number" class="ipt" id="d_s" min="0"/>
-					</li>
-					<li name="myDropdown" class="dropdown_input_value">
-						<label for= "d_d"><span class="lbl-t">Densidad Disolvente</span></label>
-						<input type="number" class="ipt" id="d_d" min="0"/>
-					</li>
-					<li name="myDropdown" class="dropdown_input_value">
-						<label for= "d_D"><span class="lbl-t">Densidad Disolución</span></label>
-						<input type="number" class="ipt" id="d_D" min="0"/>
-					</li>
-				</div>
+				
 				<li class="input_value">
 					<label for= "p_m"><span class="lbl-t">% Masa</span></label>
 					<input type="number" class="ipt" id="p_m" min="0"/>
@@ -91,40 +157,10 @@
 					<label for= "molalidad"><span class="lbl-t">Molalidad</span></label>
 					<input type="number" class="ipt" id="molalidad" min="0"/>
 				</li>
-				<div class="dropdown" >
-					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn">Masas Molares</button>
-					<li name="myDropdown" class="dropdown_input_value">
-						<label for= "m_mol_s"><span class="lbl-t">Masa molar soluto</span></label>
-						<input type="text" class="ipt" id="m_mol_s" min="0"/>
-					</li>
-					<li name="myDropdown" class="dropdown_input_value">
-						<label for= "m_mol_d"><span class="lbl-t">Masa molar disolvente</span></label>
-						<input type="text" class="ipt" id="m_mol_d" min="0"/>
-					</li>
-					<li name="myDropdown" class="dropdown_input_value">
-						<label for= "m_mol_D"><span class="lbl-t">Masa molar disolución</span></label>
-						<input type="text" class="ipt" id="m_mol_D" min="0"/>
-					</li>
-				</div>
 				<li class="input_value">
 					<label for= "f_m"><span class="lbl-t">Fracción Molar</span></label>
 					<input type="number" class="ipt" id="f_m" min="0"/>
-				</li>
-				<div class="dropdown" >
-					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn">Numero de Moles</button>
-					<li name="myDropdown" class="dropdown_input_value">
-						<label for= "n_s"><span class="lbl-t">Numero Moles soluto</span></label>
-						<input type="number" class="ipt" id="n_s" min="0"/>
-					</li>
-					<li name="myDropdown" class="dropdown_input_value">
-						<label for= "n_d"><span class="lbl-t">Numero Moles disolvente</span></label>
-						<input type="number" class="ipt" id="n_d" min="0"/>
-					</li>
-					<li name="myDropdown" class="dropdown_input_value">
-						<label for= "n_D"><span class="lbl-t">Numero Moles disolución</span></label>
-						<input type="number" class="ipt" id="n_D" min="0"/>
-					</li>
-				</div>
+				</li>	
 			</ul>
 			<ul class="response" id="response-container">
 				<li>Masa Soluto <output name="m_s"></output></li>
