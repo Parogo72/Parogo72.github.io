@@ -8,13 +8,17 @@ class Variable {
     changeStyle(bool) {
         let element = document.getElementsByName(this.id)[0]
         let element2 = document.getElementById(this.id)
+        let name = " wrong2"
+        let b = name
+        if(element2.parentNode.className.includes(" wrong2")) name =" wrong";
+        element ? element.parentNode.className = element.parentNode.className.replace(b, "").replace(" wrong", "") : null;
+        element2.parentNode.className = element2.parentNode.className.replace(b, "").replace(" wrong", "")
         if(bool) {
-            element ? element.style.background = 'rgba(255, 0, 0, 1)' : null
-            element2.parentElement.style.background = 'rgba(255, 0, 0, 1)';
-        } else {
-            element ? element.style.background = 'rgba(73, 189, 255, 1)' : null
-            element2.parentElement.style.background = 'rgba(73, 189, 255, 1)';
-        }
+            console.log(element2.parentNode.className, name, this.id)
+            element ? element.parentNode.className += name : null;
+            element2.parentNode.className += name
+            console.log(element2.parentNode.className, name, this.id)
+        } 
     }
     calcValue() {
         if(this.type === 'number') {

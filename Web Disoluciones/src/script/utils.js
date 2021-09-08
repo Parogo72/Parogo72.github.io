@@ -20,15 +20,14 @@ let replace_var = (s) => {
     .replace(/n_s/g, values.n_s.value)
     .replace(/n_d/g, values.n_d.value)
     .replace(/n_D/g, values.n_D.value)
-    if(x.includes('null') || x.includes(0)) return NaN
+    if(x.includes('null')) return NaN
     return x;
 }
 
-
-const check_var = (id, ans, i) => {
+const check_var = (id, ans) => {
     let obj = values[id];
     let val = obj.calcValue()
-    if(!isNaN(parseFloat(val)) && Math.abs(val - ans) > 0.001 && !isNaN(ans) || ans < 0) {
+    if(!isNaN(val) && (Math.abs(val - ans) > 0.001 || ans < 0 || val < 0)) {
         issue_arr.push(id)
     } 
     return !values[id].value && values[id].value !== 0;
@@ -36,14 +35,18 @@ const check_var = (id, ans, i) => {
 
 const change_style = (id, bool) => {
     let element = document.getElementsByName(id)[0]
-    let element2 = document.getElementById(id)
-    if(bool) {
-        element ? element.style.background = 'rgba(255, 0, 0, 1)' : null
-        element2.parentElement.style.background = 'rgba(255, 0, 0, 1)';
-    } else {
-        element ? element.style.background = 'rgba(0, 132, 255, 1)' : null
-        element2.parentElement.style.background = 'rgba(0, 132, 255, 1)';
-    }
+        let element2 = document.getElementById(id)
+        let name = " wrong2"
+        let b = name
+        if(element2.parentNode.className.includes(" wrong2")) name =" wrong";
+        element ? element.parentNode.className = element.parentNode.className.replace(b, "").replace(" wrong", "") : null;
+        element2.parentNode.className = element2.parentNode.className.replace(b, "").replace(" wrong", "")
+        if(bool) {
+            console.log(element2.parentNode.className, name, id)
+            element ? element.parentNode.className += name : null;
+            element2.parentNode.className += name
+         
+        } 
 }
 
 let table = {
@@ -161,6 +164,7 @@ let table = {
 
 const mole_arr = (string) => {
     let arr = []
+    if(parseFloat(string)) return string
     for( i=0 ; i<string.length ; i++ ) {
         if(/[A-Z]/.test(string[i])) {
             /[a-z]/.test(string[i+1]) ? arr.push(string[i] + string[i+1]) : arr.push(string[i])
@@ -201,8 +205,9 @@ const mole_loop = (string, i) => {
     return [arr2, count]
 }
 const mole_obtainer = (array, id) => {
-    let values = 0
-    for( i=0 ; i<array.length ; i++ ) {
+    let values = 0;
+    if(parseFloat(array)) return array
+    for( i=0 ; i<=array.length ; i++ ) {
         if(Array.isArray(array[i])) {
             let val = arr_loop(array[i])
             if(Number(array[i+1])) {
@@ -215,7 +220,7 @@ const mole_obtainer = (array, id) => {
             } else if(num){
                 values += num
             } else {
-                return null
+                return values || null
             }
         }   
     }

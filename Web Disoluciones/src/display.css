@@ -5,22 +5,26 @@ ul { margin: 10px; padding: 0; list-style-type: none;}
 #input-container {
     position: relative;
     float: left;
-    width: 60%;
+    width: 55%;
     display: grid;
-    gap: 4rem;
-    grid-auto-rows: 7rem;
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    row-gap: 2rem;
+    column-gap: 0.5rem;
+    grid-auto-rows: 8rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1.5fr));
     align-items: center;
     justify-items: center;
 }
 #response-container {
-    width: 35%;
+    width: 42%;
     position: relative;
     float: right;
     display: grid;
-    gap: 1rem;
+    column-gap: 0.65rem;
+    row-gap: 1rem;
     grid-auto-rows: 5rem;
-    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+    align-items: center;
+    justify-items: center;
 }
 
 

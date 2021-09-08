@@ -50,26 +50,47 @@ async function main() {
     porcentaje_masa_f.calcValue();
     porcentaje_volumen_f.calcValue();
     porcentaje_masa_f.calcValue();
-    for(let i of Object.entries(values)) {
-      let bool = false;
-      if(issue_arr.some(val => val === i[1].id) || i[1].value === null) bool = true 
-      i[1].changeStyle(bool)
-    }
-    issue_arr = []
     if(check_loop == true) {
+      for(let i of Object.entries(values)) {
+        let bool = false;
+        if(issue_arr.some(val => val === i[1].id)) bool = true 
+        i[1].changeStyle(bool)
+      }
+      issue_arr = []
       loop = false;
       end()
     }
   }
 }
-
-async function end() {
+let previous = [];
+let x = 0;
+function end() {
+  x = 0;
   for(let i of Object.entries(values)) {
+    
     let element = document.getElementsByName(i[0])[0];
-    if(element) {
-      element.innerHTML = Math.round(i[1].value* 1000) / 1000 || 'No value'
-      element.style.display = 'inline'
+    let input_element = document.getElementById(i[0]);
+    
+    if(!element) return;
+    
+    let had_value = false;
+    if(element.parentNode.className.includes("has_value") && (previous[x] || previous[x] === 0) && previous[x] !== i[1].value) had_value = true;
+    element.parentNode.className = element.parentNode.className.replace(" calculated", "").replace(" had_value", "").replace(" has_value", "")
+    previous[x] = i[1].value
+    if(!i[1].value && i[1].value !== 0) {
+      element.parentNode.style.display = 'none';
+    }else {
+      let value = Math.round(i[1].value* 1000) / 1000
+      element.innerHTML = value || value === 0 ? value : '---'
+      element.parentNode.style.display = 'inline-flex'
     }
+    if(input_element.value) {
+      had_value ? element.parentNode.className += " had_value" : element.parentNode.className += " has_value";
+    } else {
+      element.parentNode.className += " calculated";
+    }
+    i[1].lastValue = i[1].value
+    x++
   }
 }
 const afcn = id => Array.from(document.getElementsByClassName(id));

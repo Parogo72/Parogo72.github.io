@@ -47,7 +47,7 @@
 				<!-- VOLUMENES -->
 
 				<li class="dropdown" >
-					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn">Volumenes</button>
+					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn">Volúmenes</button>
 					<ul class="dropul">
 						<li name="myDropdown" class="dropdown_input_value">
 							<label for= "v_s"><span class="lbl-t">Volumen soluto</span></label>
@@ -113,18 +113,18 @@
 				<!-- NUMERO DE MOLES -->
 
 				<li class="dropdown" >
-					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn">Numero de Moles</button>
+					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn">Número de Moles</button>
 					<ul class="dropul">
 						<li name="myDropdown" class="dropdown_input_value">
-							<label for= "n_s"><span class="lbl-t">Numero Moles soluto</span></label>
+							<label for= "n_s"><span class="lbl-t">Número Moles soluto</span></label>
 							<input type="number" class="ipt" id="n_s" min="0"/>
 						</li>
 						<li name="myDropdown" class="dropdown_input_value">
-							<label for= "n_d"><span class="lbl-t">Numero Moles disolvente</span></label>
+							<label for= "n_d"><span class="lbl-t">Número Moles disolvente</span></label>
 							<input type="number" class="ipt" id="n_d" min="0"/>
 						</li>
 						<li name="myDropdown" class="dropdown_input_value">
-							<label for= "n_D"><span class="lbl-t">Numero Moles disolución</span></label>
+							<label for= "n_D"><span class="lbl-t">Número Moles disolución</span></label>
 							<input type="number" class="ipt" id="n_D" min="0"/>
 						</li>
 					</ul>
@@ -133,7 +133,7 @@
 				<!-- NUMERO DE MOLES END -->
 
 				<li class="input_value">
-					<label for= "v_a"><span class="lbl-t">Volumenes Aditivos</span></label>
+					<label for= "v_a"><span class="lbl-t">Volúmenes Aditivos</span></label>
 					<input type="checkbox" class="ipt" id="v_a"/>
 				</li>
 				
@@ -162,28 +162,92 @@
 					<input type="number" class="ipt" id="f_m" min="0"/>
 				</li>	
 			</ul>
+
 			<ul class="response" id="response-container">
-				<li>Masa Soluto <output name="m_s"></output></li>
-				<li>Masa Disolvente <output name="m_d"></output></li>
-				<li>Masa Disolución <output name="m_D"></output></li>
-				<li>Volumen Soluto <output name="v_s"></output></li>
-				<li>Volumen Disolvente <output name="v_d"></output></li>
-				<li>Volumen Disolución <output name="v_D"></output></li>
-				<li>Densidad Soluto <output name="d_s"></output></li>
-				<li>Densidad Disolvente <output name="d_d"></output></li>
-				<li>Densidad Disolución <output name="d_D"></output></li>
-				<li>% Masa <output name="p_m"></output></li>
-				<li>% Volumen <output name="p_v"></output></li>
-				<li>Concentración <output name="c"></output></li>
-				<li>Molaridad <output name="molaridad"></output></li>
-				<li>Molalidad <output name="molalidad"></output></li>
-				<li>Masa Molar Soluto <output name="m_mol_s"></output></li>
-				<li>Masa Molar Disolvente <output name="m_mol_d"></output></li>
-				<li>Masa Molar Disolución <output name="m_mol_D"></output></li>
-				<li>Fracción Molar <output name="f_m"></output></li>
-				<li>Moles de Soluto <output name="n_s"></output></li>
-				<li>Moles de Disolvente <output name="n_d"></output></li>
-				<li>Moles de Disolución <output name="n_D"></output></li>
+				<li class="output_value">
+					<label for= "m_s"><span class="lbl-t">Masa Soluto</span></label>
+					<output name="m_s"></output>
+				</li>
+				<li class="output_value">
+					<label for= "m_d"><span class="lbl-t">Masa Disolvente</span></label> 
+					<output name="m_d"></output>
+				</li>
+				<li class="output_value">
+					<label for= "m_D"><span class="lbl-t">Masa Disolución</span></label> 
+					<output name="m_D"></output>
+				</li>
+				<li class="output_value">
+					<label for= "v_s"><span class="lbl-t">Volumen Soluto</span></label> 
+					<output name="v_s"></output>
+				</li>
+				<li class="output_value">
+					<label for= "v_d"><span class="lbl-t">Volumen Disolvente</span></label> 
+					<output name="v_d"></output>
+				</li>
+				<li class="output_value">
+					<label for= "v_D"><span class="lbl-t">Volumen Disolución</span></label> 
+					<output name="v_D"></output>
+				</li>
+				<li class="output_value">
+					<label for= "d_s"><span class="lbl-t">Densidad Soluto</span></label> 
+					<output name="d_s"></output>
+				</li>
+				<li class="output_value">
+					<label for= "d_s"><span class="lbl-t">Densidad Disolvente</span></label> 
+					<output name="d_d"></output>
+				</li>
+				<li class="output_value">
+					<label for= "d_D"><span class="lbl-t">Densidad Disolución</span></label> 
+					<output name="d_D"></output>
+				</li>
+				<li class="output_value">
+					<label for= "p_m"><span class="lbl-t">% Masa</span></label> 
+					<output name="p_m"></output>
+				</li>
+				<li class="output_value">
+					<label for= "p_v"><span class="lbl-t">% Volumen</span></label> 
+					<output name="p_v"></output>
+				</li>
+				<li class="output_value">
+					<label for= "c"><span class="lbl-t">Concentración</span></label> 
+					<output name="c"></output>
+				</li>
+				<li class="output_value">
+					<label for= "molaridad"><span class="lbl-t">Molaridad</span></label> 
+					<output name="molaridad"></output>
+				</li>
+				<li class="output_value">
+					<label for= "molalidad"><span class="lbl-t">Molalidad</span></label> 
+					<output name="molalidad"></output>
+				</li>
+				<li class="output_value">
+					<label for= "m_mol_s"><span class="lbl-t">Masa Molar Soluto</span></label> 
+					<output name="m_mol_s"></output>
+				</li>
+				<li class="output_value">
+					<label for= "m_mol_d"><span class="lbl-t">Masa Molar Disolvente</span></label> 
+					<output name="m_mol_d"></output>
+				</li>
+				<li class="output_value">
+					<label for= "m_mol_D"><span class="lbl-t">Masa Molar Disolución</span></label> 
+					<output name="m_mol_D"></output>
+				</li>
+				<li class="output_value">
+					<label for= "f_m"><span class="lbl-t">Fracción Molar</span></label> 
+					<output name="f_m"></output>
+				</li>
+				<li class="output_value">
+					<label for= "n_s"><span class="lbl-t">Moles de Soluto</span></label> 
+					<output name="n_s"></output>
+				</li>
+				<li class="output_value">
+					<label for= "n_d"><span class="lbl-t">Moles de Disolvente</span></label> 
+					<output name="n_d"></output>
+				</li>
+				<li class="output_value">
+					<label for= "n_D"><span class="lbl-t">Moles de Disolución</span></label> 
+					<output name="n_D"></output>
+				</li>
 			</ul>
 		</div>
 		<script src="src/script/utils.js"></script>

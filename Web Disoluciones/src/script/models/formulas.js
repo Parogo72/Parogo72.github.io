@@ -14,7 +14,7 @@ class Formula {
         let formula_arr = i.split('=');
         let id = formula_arr[0];
         let ans = math.evaluate(replace_var(formula_arr[1]))
-        if(check_var(id, ans, i)) {  
+        if(check_var(id, ans)) {  
           if(!isNaN(ans) && ans !== Infinity) {
             values[id].value = ans
             check_loop = false;
