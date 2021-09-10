@@ -1,0 +1,155 @@
+.settings-container {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -20%;
+    width: 40%;
+    margin-top: -18rem;
+    background-color: var(--body-bg);
+    box-shadow: 0 4px 6px var(--lightshadow), 0 4px 4px var(--darkshadow);
+    border-radius: 1.5rem;
+    z-index: 10000;
+    color: var(--text);
+}
+
+.Displayed {
+    display: inline;
+}
+.settings-container svg > path {
+    stroke-width: 5;
+    fill: var(--text);
+}
+
+.settings-container > label {
+    position: relative;
+    left: 86%;
+    top: 8%;
+    height: auto;
+    cursor: pointer;
+    padding: 3%;
+}
+.settings-container label svg {
+    margin-top: 3%;
+}
+.radioButtons {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.radioButtons li {
+    margin: 5%;
+}
+
+.container {
+    position: relative;
+    left: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    
+}
+
+.container > input {
+    position: relative;
+    margin: auto;
+    width: 100%;
+}
+
+.settings-li {
+    display: flex;
+    flex-direction: column;
+}
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css');
+
+#language {
+    display: none;
+}
+.lang-menu {
+    font-weight: bold;
+}
+.lang-menu .selected-lang {
+    display: flex;   
+    justify-content: space-between;
+    line-height: 2;
+    cursor: pointer;
+}
+.lang-menu .selected-lang:before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+.lang-menu .selected-lang.es:before {
+    background-image: url(https://www.countryflags.io/es/flat/64.png);
+}
+.lang-menu .selected-lang.en:before {
+    background-image: url(https://www.countryflags.io/gb/flat/64.png);
+}
+
+.lang-menu ul {
+    margin: 0 0 0 -9%;
+    padding: 0;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #f8f8f8;
+    position: absolute;
+    top: 130%;
+    width: 120%;
+    border-radius: 5px;
+    box-shadow: 0px 1px 10px rgb(0 0 0 / 20%);
+}
+
+
+.lang-menu ul li {
+    list-style: none;
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.lang-menu ul li span {
+    text-decoration: none;
+    padding: 5% 10%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.lang-menu ul li:hover {
+    background-color: #f2f2f2;
+}
+
+.lang-menu ul li span:before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.es:before {
+    background-image: url(https://www.countryflags.io/es/flat/64.png);
+}
+
+.en:before {
+    background-image: url(https://www.countryflags.io/gb/flat/64.png);
+}
+
+#language:checked + label > ul {
+    display: block;
+}

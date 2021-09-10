@@ -27,7 +27,7 @@ let replace_var = (s) => {
 const check_var = (id, ans) => {
     let obj = values[id];
     let val = obj.calcValue()
-    if(!isNaN(val) && (Math.abs(val - ans) > 0.001 || ans < 0 || val < 0)) {
+    if(!isNaN(val) && (Math.abs(val - ans) >  10**(-aprox) || ans < 0 || val < 0) && val !== null) {
         issue_arr.push(id)
     } 
     return !values[id].value && values[id].value !== 0;
@@ -259,6 +259,12 @@ function copy(e) {
     /* Alert the copied text */
     alert("Texto copiado");
   }
+
+function numberChangeEnd(element, value) {
+    if(value > 1000) exponent ? value = Number(value).toExponential(aprox) :  value = Number(value).toExponential(aprox).replace(/e\+?/, 'x10^')
+    element.innerHTML = value || value === 0 ? value : '---'
+}
+
 //e.addEventListener ? e.addEventListener('change', () => main()) : e.attachEvent('onchange', () => main()));
 //afcn('input_value').forEach(e => e.innerHTML += '<button class="copy-button">copy</button>');
 //afcn('copy-button').forEach(e => createEventListener(e, 'click', () => copy(Array.from(e.parentNode.childNodes).find(e => e instanceof HTMLInputElement))));

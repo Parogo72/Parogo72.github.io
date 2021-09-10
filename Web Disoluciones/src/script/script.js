@@ -1,30 +1,4 @@
-let values = {
-  'm_s': 'number',
-  'm_d': 'number',
-  'm_D': 'number',
-  'v_s': 'number',
-  'v_d': 'number',
-  'v_D': 'number',
-  'd_s': 'number',
-  'd_d': 'number',
-  'd_D': 'number',
-  'p_m': 'number',
-  'p_v': 'number',
-  'c': 'number',
-  'molaridad': 'number',
-  'molalidad': 'number',
-  'm_mol_s': 'mol',
-  'm_mol_d': 'mol',
-  'm_mol_D': 'mol',
-  'f_m': 'number',
-  'n_s': 'number',
-  'n_d': 'number',
-  'n_D': 'number',
-  'v_a': 'boolean'
-}
-let issue_arr = [];
-let loop;
-let check_loop = true; 
+ 
 const get = id => parseFloat(document.getElementById(id).value);
 async function main() {
   loop = true;
@@ -80,9 +54,10 @@ function end() {
     if(!i[1].value && i[1].value !== 0) {
       element.parentNode.style.display = 'none';
     }else {
-      let value = Math.round(i[1].value* 1000) / 1000
-      element.innerHTML = value || value === 0 ? value : '---'
-      element.parentNode.style.display = 'inline-flex'
+      let value = parseFloat(Number(i[1].value).toFixed(aprox))
+      console.log(value)
+      numberChangeEnd(element, value)
+      element.parentNode.style.display = 'flex'
     }
     if(input_element.value) {
       had_value ? element.parentNode.className += " had_value" : element.parentNode.className += " has_value";
