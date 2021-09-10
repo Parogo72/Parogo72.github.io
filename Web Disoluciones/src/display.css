@@ -22,6 +22,7 @@
     --output-bg: rgb(255, 255, 255);
     --input-bg: rgb(255, 255, 255);
     --radio-bg: rgb(91, 79, 255);
+    --language-bg: rgb(235, 235, 235);
 }
 .Dark {
     --dropdown: rgb(1, 107, 179);
@@ -47,6 +48,7 @@
     --output-bg: rgb(36, 36, 36);
     --input-bg: rgb(36, 36, 36);
     --radio-bg: rgb(1, 107, 179);
+    --language-bg: rgb(53, 53, 53);
 }
 body { 
     margin: 0;  
