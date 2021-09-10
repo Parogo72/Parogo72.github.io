@@ -80,9 +80,12 @@ function languageToggle(e) {
     case 'English':
       lang = "en";
     break;
+    case 'Català':
+      lang = "ca";
+    break;
   }
   selector.innerHTML = e.className
-  selector.className = selector.className.replace(" es", "").replace(" en", "") + ` ${lang}`
+  selector.className = selector.className.replace(" es", "").replace(" en", "").replace(" ca", "") + ` ${lang}`
   langToggle(lang)
 }
 
@@ -94,7 +97,7 @@ function langToggle(lang) {
       let val = array_lang.find(a=> {
         return e.className.includes(" " + a[0] + " ")
       })
-      if(!val) return console.log(e, e.className)
+      if(!val) return;
       e.innerHTML = val[1]
   })
 }

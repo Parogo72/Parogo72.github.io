@@ -80,21 +80,25 @@
     justify-content: space-between;
     line-height: 2;
     cursor: pointer;
+    align-items: center;
 }
 .lang-menu .selected-lang:before {
     content: '';
     display: inline-block;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     background-size: contain;
     background-repeat: no-repeat;
     margin-right: 10px;
 }
 .lang-menu .selected-lang.es:before {
-    background-image: url(https://www.countryflags.io/es/flat/64.png);
+    background-image: url('../images/españa.png');
 }
 .lang-menu .selected-lang.en:before {
-    background-image: url(https://www.countryflags.io/gb/flat/64.png);
+    background-image: url('../images/reino-unido.png');
+}
+.lang-menu .selected-lang.ca:before {
+    background-image: url('../images/cataluña.png');
 }
 
 .lang-menu ul {
@@ -143,11 +147,14 @@
 }
 
 .es:before {
-    background-image: url(https://www.countryflags.io/es/flat/64.png);
+    background-image: url('../images/españa.png');
 }
 
 .en:before {
-    background-image: url(https://www.countryflags.io/gb/flat/64.png);
+    background-image: url('../images/reino-unido.png');
+}
+.ca:before {
+    background-image: url('../images/cataluña.png');
 }
 
 #language:checked + label > ul {
