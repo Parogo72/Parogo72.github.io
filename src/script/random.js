@@ -29,11 +29,13 @@ function toggle(element) {
 
 function darkToggle() {
   let element = document.documentElement
+  c.theme.value = element.className.includes("Dark") ? "white" : "black"
   if(element.className.includes("Dark")) {
     element.className = element.className.replace(" Dark", "")
   } else {
     element.className += " Dark";
   }
+  
 }
 
 function settingsToggle() {
@@ -49,21 +51,31 @@ function settingsToggle() {
 }
 
 function radioToggle(e) {
+  
+  let element = e.className ? e : document.getElementsByClassName(e)[0]
+  console.log(element)
+  element.dispatchEvent(new Event('click'));
+  element.checked = true;
   switch (e.className ? e.className : e) {
     case 'mil':
       aprox = 3;
+      c.round.value = e.className ? e.className : e
     break;
     case 'cent':
       aprox = 2;
+      c.round.value = e.className ? e.className : e
     break;
     case 'dec':
       aprox = 1;
+      c.round.value = e.className ? e.className : e
     break;
     case '10':
       exponent = false;
+      c.notation.value = e.className ? e.className : e
     break;
     case 'e': 
       exponent = true;
+      c.notation.value = e.className ? e.className : e
     break;
   }
   main()
@@ -85,6 +97,8 @@ function languageToggle(e) {
   }
   selector.innerHTML = e.className ? e.className : e
   selector.className = selector.className.replace(" es", "").replace(" en", "").replace(" ca", "") + ` ${lang}`
+  c.lang.value = e.className ? e.className : e
+  document.documentElement.lang = lang
   langToggle(lang)
 }
 
