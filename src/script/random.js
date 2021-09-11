@@ -49,8 +49,7 @@ function settingsToggle() {
 }
 
 function radioToggle(e) {
-  console.log(e.className)
-  switch (e.className) {
+  switch (e.className ? e.className : e) {
     case 'mil':
       aprox = 3;
     break;
@@ -73,7 +72,7 @@ function radioToggle(e) {
 function languageToggle(e) {
   let lang;
   let selector = document.getElementById("lang-selector")
-  switch (e.className) {
+  switch (e.className ? e.className : e) {
     case 'Español':
       lang = "es";
     break;
@@ -84,7 +83,7 @@ function languageToggle(e) {
       lang = "ca";
     break;
   }
-  selector.innerHTML = e.className
+  selector.innerHTML = e.className ? e.className : e
   selector.className = selector.className.replace(" es", "").replace(" en", "").replace(" ca", "") + ` ${lang}`
   langToggle(lang)
 }
