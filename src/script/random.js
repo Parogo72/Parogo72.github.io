@@ -29,11 +29,16 @@ function toggle(element) {
 
 function darkToggle() {
   let element = document.documentElement
+  let button = document.getElementsByClassName("DarkButton")[0]
   c.theme.value = element.className.includes("Dark") ? "white" : "black"
   if(element.className.includes("Dark")) {
+    button.className += " Raised";
+    button.className = button.className.replace(" Pressed", "")
     element.className = element.className.replace(" Dark", "")
   } else {
     element.className += " Dark";
+    button.className += " Pressed";
+    button.className = button.className.replace(" Raised", "")
   }
   
 }

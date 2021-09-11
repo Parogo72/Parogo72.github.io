@@ -171,20 +171,35 @@
 }
 @media screen and (max-width: 950px) {
     .settings-container {
-        top: 55%;
+        top: 15%;
         width: 70%;
         margin-left: -35%;
+        overflow: auto;
+        margin-top: 5%;
     }
     .settings-container > label {
         left: 75%;
-    }
-    .wrapper {
-        flex-direction: column;
-        padding: 10px 15px;
     }
     .wrapper .option {
         width: 100%;
         padding: 7% 20%;
         margin: 10% 0;
+    }
+}
+@media screen and (max-width: 550px) {
+    .wrapper {
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+}
+
+@media screen and (max-height: 550px) {
+    .settings-container {
+        top: 10%;
+        width: 70%;
+        margin-left: -35%;
+        overflow: auto;
+        margin-top: 5%;
+        height: 250px
     }
 }
