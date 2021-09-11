@@ -23,6 +23,7 @@
     --input-bg: rgb(255, 255, 255);
     --radio-bg: rgb(91, 79, 255);
     --language-bg: rgb(235, 235, 235);
+    --line: rgb(27, 27, 27);
 }
 .Dark {
     --dropdown: rgb(1, 107, 179);
@@ -49,7 +50,11 @@
     --input-bg: rgb(36, 36, 36);
     --radio-bg: rgb(1, 107, 179);
     --language-bg: rgb(53, 53, 53);
+    --line: rgb(223, 223, 223);
 }
+
+
+
 body { 
     margin: 0;  
     background-color: var(--body-bg);
@@ -111,6 +116,10 @@ header {
     letter-spacing: -0.02em;
     box-shadow: 0 1px 3px var(--lightshadow), 0 1px 2px var(--darkshadow);
     background-color: var(--header-bg);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000000000000;
 }
 
 header svg + a {
@@ -140,11 +149,20 @@ nav + label {
     transition: box-shadow 0.3s ease-in-out, color 0.3s linear;
 }
 
+div#main {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    align-content: center;
+    margin-top: 50px;
+}
 #input-container {
     font-size: 17px; 
     font-weight:300; 
     position: relative;
-    float: left;
     width: 55%;
     display: grid;
     row-gap: 2rem;
@@ -159,7 +177,6 @@ nav + label {
     font-weight:300; 
     width: 42%;
     position: relative;
-    float: right;
     display: grid;
     column-gap: 0.3rem;
     row-gap: 0.5rem;
@@ -168,8 +185,28 @@ nav + label {
     align-items: center;
     justify-items: center;
 }
+hr {
+    display: none;
+}
 
-
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
     div#main { display: block;}
+    #input-container {
+        width: 90%;
+        margin-left: 3%;
+    }
+    #response-container {
+        width: 90%;
+        margin-left: 3%;
+        row-gap: 2rem;
+    }
+    hr {
+        display: block;
+        color: var(--line);
+    }
+}
+@media screen and (max-width: 400px) {
+    nav > label > a {
+        display: none;
+    }
 }

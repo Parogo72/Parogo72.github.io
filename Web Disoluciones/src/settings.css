@@ -15,6 +15,7 @@
 
 .Displayed {
     display: inline;
+    position: fixed;
 }
 .settings-container svg > path {
     stroke-width: 5;
@@ -102,14 +103,14 @@
 }
 
 .lang-menu ul {
-    margin: 0 0 0 -9%;
+    margin: 0 0 0 -12%;
     padding: 0;
     display: none;
     background-color: var(--body-bg);
     border: 1px solid #f8f8f8;
     position: absolute;
-    top: 130%;
-    width: 120%;
+    top: 110%;
+    width: 100%;
     border-radius: 5px;
     box-shadow: 0px 1px 10px rgb(0 0 0 / 20%);
 }
@@ -129,12 +130,20 @@
     display: flex;
     align-items: center;
     text-align: left;
+    margin: 0;
 }
 
 .lang-menu ul li:hover {
     background-color: var(--language-bg);
 }
-
+.lang-menu label {
+    position: relative;
+    box-shadow: 0px 1px 10px var(--lightshadow);
+    padding: 5% 15%;
+    width: 100%;
+    top: 50%;
+    left: -20%;
+}
 .lang-menu ul li span:before {
     content: '';
     display: inline-block;
@@ -159,4 +168,23 @@
 
 #language:checked + label > ul {
     display: block;
+}
+@media screen and (max-width: 950px) {
+    .settings-container {
+        top: 55%;
+        width: 70%;
+        margin-left: -35%;
+    }
+    .settings-container > label {
+        left: 75%;
+    }
+    .wrapper {
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+    .wrapper .option {
+        width: 100%;
+        padding: 7% 20%;
+        margin: 10% 0;
+    }
 }
