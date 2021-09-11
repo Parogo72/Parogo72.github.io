@@ -42,10 +42,8 @@ const change_style = (id, bool) => {
         element ? element.parentNode.className = element.parentNode.className.replace(b, "").replace(" wrong", "") : null;
         element2.parentNode.className = element2.parentNode.className.replace(b, "").replace(" wrong", "")
         if(bool) {
-            console.log(element2.parentNode.className, name, id)
             element ? element.parentNode.className += name : null;
             element2.parentNode.className += name
-         
         } 
 }
 

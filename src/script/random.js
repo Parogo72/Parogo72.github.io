@@ -58,7 +58,6 @@ function settingsToggle() {
 function radioToggle(e) {
   
   let element = e.className ? e : document.getElementsByClassName(e)[0]
-  console.log(element)
   element.dispatchEvent(new Event('click'));
   element.checked = true;
   switch (e.className ? e.className : e) {

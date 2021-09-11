@@ -40,7 +40,6 @@ class __Cookie {
     }
     set value (t) {
         const v = __conf.eq[this.name].indexOf(t);
-        console.log(this.name, v, t);
         if(typeof v !== 'undefined') __addCookie(this.name, v, 365);
         else throw new Error(`[Cookies] Invalid ${this.name} value: ${t}`);
     }

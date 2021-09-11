@@ -56,7 +56,6 @@ function end() {
       element.parentNode.style.display = 'none';
     }else {
       let value = parseFloat(Number(i[1].value).toFixed(aprox))
-      console.log(value)
       numberChangeEnd(element, value)
       element.parentNode.style.display = 'flex'
     }
