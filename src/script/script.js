@@ -1,5 +1,6 @@
  
 const get = id => parseFloat(document.getElementById(id).value);
+
 async function main() {
   loop = true;
   for(let i of Object.entries(values)) {
@@ -72,3 +73,8 @@ const afcn = id => Array.from(document.getElementsByClassName(id));
 const createEventListener = (enode, ename, callback) => enode.addEventListener ? enode.addEventListener(ename, callback) : enode.attachEvent(`on${ename}`, callback);
 afcn('ipt').forEach(e => createEventListener(e, 'change', main));
 main()
+
+if(c.theme.value === "black") darkToggle();
+languageToggle(c.lang.value)
+radioToggle(c.round.value)
+radioToggle(c.notation.value)

@@ -68,7 +68,3 @@ if(!c.lang.exist()) c.lang.value = __conf.eq.lang[__conf.default.lang];
 if(!c.notation.exist()) c.notation.value = __conf.eq.notation[__conf.default.notation];
 if(!c.round.exist()) c.round.value = __conf.eq.round[__conf.default.round];
 
-if(c.theme.value === "black") darkToggle();
-languageToggle(c.lang.value)
-radioToggle(c.round.value)
-radioToggle(c.notation.value)
