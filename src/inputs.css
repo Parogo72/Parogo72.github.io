@@ -339,6 +339,14 @@ li.output_value {
         background: var(--light-animation);
     }
 }
+@-webkit-keyframes BGcolorCalculated {
+  0% {
+      background: var(--strong-animation);
+  }
+  50% {
+      background: var(--light-animation);
+  }
+}
 
 @keyframes BGcolorHas_value {
     0% {
@@ -347,6 +355,15 @@ li.output_value {
     50% {
         background: var(--light-animation);
     }
+}
+
+@-webkit-keyframes BGcolorHas_value {
+  0% {
+      background: var(--strong-animation);
+  }
+  50% {
+      background: var(--light-animation);
+  }
 }
 
 @keyframes BGcolorHad_value {
@@ -358,6 +375,15 @@ li.output_value {
     }
 }
 
+@-webkit-keyframes BGcolorHad_value {
+  0% {
+      background: var(--strong-animation);
+  }
+  50% {
+      background: var(--light-animation);
+  }
+}
+
 @keyframes BGcolorWrong {
     0% {
         background: var(--wrong-light);
@@ -365,6 +391,15 @@ li.output_value {
     50% {
         background: var(--wrong-strong);
     }
+}
+
+@-webkit-keyframes BGcolorWrong {
+  0% {
+      background: var(--wrong-light);
+  }
+  50% {
+      background: var(--wrong-strong);
+  }
 }
 
 @keyframes BGcolorWrong2 {
@@ -376,6 +411,15 @@ li.output_value {
     }
 }
 
+@-webkit-keyframes BGcolorWrong2 {
+  0% {
+      background: var(--wrong-light);
+  }
+  50% {
+      background: var(--wrong-strong);
+  }
+}
+
 @keyframes BGcolorInput {
     0% {
         background: var(--input-strong);
@@ -383,4 +427,13 @@ li.output_value {
     50% {
         background: var(--input-light);
     }
+}
+
+@-webkit-keyframes BGcolorInput {
+  0% {
+      background: var(--input-strong);
+  }
+  50% {
+      background: var(--input-light);
+  }
 }
