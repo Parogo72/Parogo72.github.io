@@ -262,6 +262,7 @@ output {
 .showed {
     background-color: var(--body-bg);
     box-shadow: 2px 2px 10px #666;
+    margin-top: 21px;
 }
 li label {
     position: relative;
