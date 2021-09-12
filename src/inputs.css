@@ -5,7 +5,7 @@ input{
     color: var(--text);
     background-color: var(--input-bg);
     -webkit-transition: all .275s;
-      transition: all .275s;
+    transition: all .275s;
 }
 .lbl-t {
     color: var(--text);
@@ -19,7 +19,7 @@ output {
     border-radius:2.5px;
     color: var(--text);
     -webkit-transition: all .275s;
-      transition: all .275s;
+    transition: all .275s;
 }
 
 .check {
@@ -59,7 +59,7 @@ output {
   border-radius: .2em;
   box-shadow: inset 0 1px 3px rgba(0,0,0, .1), 0 0 0 rgba(203, 34, 237, .2);
   -webkit-transition: all .275s;
-      transition: all .275s;
+  transition: all .275s;
 }
 
 /* checked mark aspect */
@@ -70,23 +70,23 @@ output {
   top: 50%;
   right: 1.5%;
   font-size: 1.375em;
-  color: #CB22ED;
+  color: var(--text);
   line-height: 0;
   -webkit-transition: all .2s;
-      transition: all .2s;
+  transition: all .2s;
 }
 
 /* checked mark aspect changes */
 .input_value [type="checkbox"]:not(:checked) + label:after {
   opacity: 0;
   -webkit-transform: scale(0) rotate(45deg);
-      transform: scale(0) rotate(45deg);
+  transform: scale(0) rotate(45deg);
 }
 
 .input_value [type="checkbox"]:checked + label:after {
   opacity: 1;
   -webkit-transform: scale(1) rotate(0);
-      transform: scale(1) rotate(0);
+  transform: scale(1) rotate(0);
 }
 
 /* Disabled checkbox */
@@ -230,7 +230,7 @@ output {
     font-family:'Roboto',sans-serif;
     font-size: 17px;
     font-weight:300;
-    color:var(--drop-text);
+    color: var(--drop-text);
     text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
     text-align:center;
     transition: all 0.2s;
@@ -299,7 +299,6 @@ li.output_value {
     justify-content: space-around;
     align-content: center;
     flex-wrap: nowrap;
-    /*animation: BGcolorChanging 0.5s linear 0.25s alternate both;*/
 }
 
 .has_value{
@@ -333,107 +332,54 @@ li.output_value {
 
 @keyframes BGcolorCalculated {
     0% {
-        background: var(--strong-animation);
+        background-color: var(--strong-animation);
     }
     50% {
-        background: var(--light-animation);
+        background-color: var(--light-animation);
     }
-}
-@-webkit-keyframes BGcolorCalculated {
-  0% {
-      background: var(--strong-animation);
-  }
-  50% {
-      background: var(--light-animation);
-  }
 }
 
 @keyframes BGcolorHas_value {
     0% {
-        background: var(--strong-animation);
+        background-color: var(--strong-animation);
     }
     50% {
-        background: var(--light-animation);
+        background-color: var(--light-animation);
     }
-}
-
-@-webkit-keyframes BGcolorHas_value {
-  0% {
-      background: var(--strong-animation);
-  }
-  50% {
-      background: var(--light-animation);
-  }
 }
 
 @keyframes BGcolorHad_value {
     0% {
-        background: var(--strong-animation);
+        background-color: var(--strong-animation);
     }
     50% {
-        background: var(--light-animation);
+        background-color: var(--light-animation);
     }
-}
-
-@-webkit-keyframes BGcolorHad_value {
-  0% {
-      background: var(--strong-animation);
-  }
-  50% {
-      background: var(--light-animation);
-  }
 }
 
 @keyframes BGcolorWrong {
     0% {
-        background: var(--wrong-light);
+        background-color: var(--wrong-light);
     }
     50% {
-        background: var(--wrong-strong);
+        background-color: var(--wrong-strong);
     }
-}
-
-@-webkit-keyframes BGcolorWrong {
-  0% {
-      background: var(--wrong-light);
-  }
-  50% {
-      background: var(--wrong-strong);
-  }
 }
 
 @keyframes BGcolorWrong2 {
     0% {
-        background: var(--wrong-light);
+        background-color: var(--wrong-light);
     }
     50% {
-        background: var(--wrong-strong);
+        background-color: var(--wrong-strong);
     }
-}
-
-@-webkit-keyframes BGcolorWrong2 {
-  0% {
-      background: var(--wrong-light);
-  }
-  50% {
-      background: var(--wrong-strong);
-  }
 }
 
 @keyframes BGcolorInput {
     0% {
-        background: var(--input-strong);
+        background-color: var(--input-strong);
     }
     50% {
-        background: var(--input-light);
+        background-color: var(--input-light);
     }
-}
-
-@-webkit-keyframes BGcolorInput {
-  0% {
-      background: var(--input-strong);
-  }
-  50% {
-      background: var(--input-light);
-  }
 }
