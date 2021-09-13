@@ -32,7 +32,7 @@ let densidad_d_f = new Formula([], ['d_d=m_d/v_d', 'm_d=d_d*v_d', 'v_d=m_d/d_d']
 let densidad_D_f = new Formula([], ['d_D=m_D/v_D', 'm_D=d_D*v_D', 'v_D=m_D/d_D'])
 let concentracion_f = new Formula([], ['c=m_s/v_D', 'm_s=c*v_D', 'v_D=m_s/c'])
 let molaridad_f = new Formula([], ['molaridad=n_s/v_D', 'n_s=molaridad*v_D', 'v_D=n_s/molaridad'])
-let molalidad_f = new Formula([], ['molalidad=n_s/m_d)', 'n_s=molalidad*m_d', 'm_d=n_s/molalidad'])
+let molalidad_f = new Formula([], ['molalidad=n_s/m_d', 'n_s=molalidad*m_d', 'm_d=n_s/molalidad'])
 let frac_molar_f = new Formula([], ['f_m=n_s/(n_s+n_d)'])
 let masa_molar_s_f = new Formula([], ['m_mol_s=m_s*1000/n_s', 'm_s=m_mol_s/1000*n_s', 'n_s=m_s/m_mol_s*1000'])
 let masa_molar_d_f = new Formula([], ['m_mol_d=m_d*1000/n_d', 'm_d=m_mol_d/1000*n_d', 'n_d=m_d/m_mol_d*1000'])
