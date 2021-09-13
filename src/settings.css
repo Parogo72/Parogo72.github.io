@@ -101,16 +101,14 @@
 }
 
 .lang-menu ul {
-    margin: 0 0 0 -12%;
-    padding: 0;
     display: none;
     background-color: var(--body-bg);
     border: 1px solid #f8f8f8;
-    position: absolute;
-    top: 110%;
-    width: 100%;
+    width: 110%;
     border-radius: 5px;
     box-shadow: 0px 1px 10px rgb(0 0 0 / 20%);
+    flex-direction: column;
+    margin-left: -3%;
 }
 
 
@@ -164,7 +162,7 @@
     background-image: url('https://parogo72.github.io/images/cataluña.png');
 }
 
-#language:checked + label > ul {
+#language:checked ~ ul {
     display: block;
 }
 @media screen and (max-width: 950px) {
