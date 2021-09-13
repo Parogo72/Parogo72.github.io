@@ -24,10 +24,11 @@ let replace_var = (s) => {
     return x;
 }
 
-const check_var = (id, ans) => {
+const check_var = (id, ans, i) => {
     let obj = values[id];
     let val = obj.calcValue()
     if(!isNaN(val) && (Math.abs(val - ans) >  10**(-aprox) || ans < 0 || val < 0) && val !== null) {
+        console.log(id, ans, val, i)
         issue_arr.push(id)
     } 
     return !values[id].value && values[id].value !== 0;
@@ -165,7 +166,7 @@ const mole_arr = (string) => {
     if(parseFloat(string)) return string
     for( i=0 ; i<string.length ; i++ ) {
         if(/[A-Z]/.test(string[i])) {
-            /[a-z]/.test(string[i+1]) ? arr.push(string[i] + string[i+1]) : arr.push(string[i])
+            /[a-z]/.test(string[i+1]) && string[i+1] ? arr.push(string[i] + string[i+1]) : arr.push(string[i])
         } else if(Number(string[i])){
             arr.push(string[i])
         } else if(string[i] === '(') {
@@ -223,6 +224,7 @@ const mole_obtainer = (array, id) => {
         }   
     }
     change_style(id, false)
+   
     return values
 }
 const arr_loop = (array) => {
