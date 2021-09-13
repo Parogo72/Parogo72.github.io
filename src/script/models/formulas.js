@@ -36,6 +36,6 @@ let molalidad_f = new Formula([], ['molalidad=n_s/m_d)', 'n_s=molalidad*m_d', 'm
 let frac_molar_f = new Formula([], ['f_m=n_s/(n_s+n_d)'])
 let masa_molar_s_f = new Formula([], ['m_mol_s=m_s*1000/n_s', 'm_s=m_mol_s/1000*n_s', 'n_s=m_s/m_mol_s*1000'])
 let masa_molar_d_f = new Formula([], ['m_mol_d=m_d*1000/n_d', 'm_d=m_mol_d/1000*n_d', 'n_d=m_d/m_mol_d*1000'])
-let masa_molar_D_f = new Formula([], ['m_mol_D=m_D/n_D', 'm_D=m_mol_D*1000*n_D', 'n_D=m_D/m_mol_D*1000'])
+let masa_molar_D_f = new Formula([], ['m_mol_D=m_D/n_D', 'm_D=m_mol_D/1000*n_D', 'n_D=m_D/m_mol_D*1000'])
 let porcentaje_masa_f = new Formula([], ['p_m=m_s*100/m_D', 'm_s=(p_m*m_D)/100', 'm_D=m_s*100/p_m'])
 let porcentaje_volumen_f = new Formula([], ['p_v=v_s*100/v_D', 'v_s=(p_v*v_D)/100', 'v_D=v_s*100/p_v'])
