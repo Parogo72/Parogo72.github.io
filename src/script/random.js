@@ -27,22 +27,6 @@ function toggle(element) {
   if(element.className.includes("ConfigButton")) settingsToggle();
 }
 
-const matcher = window.matchMedia('(prefers-color-scheme:dark)');
-
-matcher.addEventListener('change', toggleIcon);
-
-function toggleIcon() {
-  const lightSchemeIcon = document.querySelector('link#light-icon');
-  const darkSchemeIcon = document.querySelector('link#dark-icon');
-  if(matcher.matches) {
-    lightSchemeIcon.remove();
-    document.head.append(darkSchemeIcon);
-  } else {
-    document.head.append(lightSchemeIcon);
-    darkSchemeIcon.remove();
-  }
-}
-
 function darkToggle() {
   let element = document.documentElement
   let button = document.getElementsByClassName("DarkButton")[0]
