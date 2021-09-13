@@ -82,6 +82,10 @@ img {
     height: 2em;
     cursor: pointer;
 }
+
+label#type2 {
+    display: none;
+}
 .Raised {
     box-shadow: 0 1px 3px var(--lightshadow), 0 1px 2px var(--darkshadow);
 }
