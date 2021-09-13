@@ -93,13 +93,13 @@
     margin-right: 10px;
 }
 .lang-menu .selected-lang.es:before {
-    background-image: url('../images/españa.png');
+    background-image: url('https://parogo72.github.io/images/españa.png');
 }
 .lang-menu .selected-lang.en:before {
-    background-image: url('../images/reino-unido.png');
+    background-image: url('https://parogo72.github.io/images/reino-unido.png');
 }
 .lang-menu .selected-lang.ca:before {
-    background-image: url('../images/cataluña.png');
+    background-image: url('https://parogo72.github.io/images/cataluña.png');
 }
 
 .lang-menu ul {
@@ -156,14 +156,14 @@
 }
 
 .es:before {
-    background-image: url('../images/españa.png');
+    background-image: url('https://parogo72.github.io/images/españa.png');
 }
 
 .en:before {
-    background-image: url('../images/reino-unido.png');
+    background-image: url('https://parogo72.github.io/images/reino-unido.png');
 }
 .ca:before {
-    background-image: url('../images/cataluña.png');
+    background-image: url('https://parogo72.github.io/images/cataluña.png');
 }
 
 #language:checked + label > ul {

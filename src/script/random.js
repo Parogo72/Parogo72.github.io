@@ -30,15 +30,18 @@ function toggle(element) {
 function darkToggle() {
   let element = document.documentElement
   let button = document.getElementsByClassName("DarkButton")[0]
+  let logo = document.getElementById("logo");
   c.theme.value = element.className.includes("Dark") ? "white" : "black"
   if(element.className.includes("Dark")) {
     button.className += " Raised";
     button.className = button.className.replace(" Pressed", "")
     element.className = element.className.replace(" Dark", "")
+    logo.src = "https://parogo72.github.io/images/logo.png"
   } else {
     element.className += " Dark";
     button.className += " Pressed";
     button.className = button.className.replace(" Raised", "")
+    logo.src = "https://parogo72.github.io/images/logo-dark.png"
   }
   
 }
