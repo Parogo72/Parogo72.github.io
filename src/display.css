@@ -68,6 +68,9 @@ nav {
     display: flex;
     padding: 0.4em
 }
+i {
+    font-style: normal;
+}
 
 header label {
     display: flex;
@@ -115,9 +118,6 @@ header svg > g {
 }
 header {
     user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
     font-size: 1.2em;
     font-weight: 500;
     letter-spacing: -0.02em;
@@ -142,9 +142,6 @@ header label {
     color: var(--tab-inactive);
 }
 
-a:-webkit-any-link {
-    cursor: pointer;
-}
 header label:hover {
     color: var(--tab-hover);
 }
