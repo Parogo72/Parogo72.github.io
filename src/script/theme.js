@@ -67,3 +67,4 @@ if(!c.lang.exist()) c.lang.value = __conf.eq.lang[__conf.default.lang];
 if(!c.notation.exist()) c.notation.value = __conf.eq.notation[__conf.default.notation];
 if(!c.round.exist()) c.round.value = __conf.eq.round[__conf.default.round];
 
+const params = new URLSearchParams(window.location.search);
