@@ -10,7 +10,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
     
-    const text = t.get('en');
+    const text = t.get('es');
     res.render('index.ejs', text);
 });
 
