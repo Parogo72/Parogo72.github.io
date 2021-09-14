@@ -120,8 +120,8 @@ function languageToggle(e) {
   selector.className = selector.className.replace(" es", "").replace(" en", "").replace(" ca", "") + ` ${lang}`
   c.lang.value = e.className ? e.className : e
   document.documentElement.lang = lang
-  document.querySelector('meta[name="description"]').setAttribute("content", languages[params.get("lang")].description);
-  document.querySelector('meta[property="og:description"]').setAttribute("content", languages[params.get("lang")].description);
+  document.querySelector('meta[name="description"]').setAttribute("content", languages[lang].description || languages["es"].despription);
+  document.querySelector('meta[property="og:description"]').setAttribute("content", languages[lang].description || languages["es"].despription);
   langToggle(lang)
 }
 
