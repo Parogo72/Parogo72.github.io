@@ -68,7 +68,3 @@ if(!c.notation.exist()) c.notation.value = __conf.eq.notation[__conf.default.not
 if(!c.round.exist()) c.round.value = __conf.eq.round[__conf.default.round];
 
 const params = new URLSearchParams(window.location.search);
-if(languages[params.get("lang")] && languages[params.get("lang")].description) {
-    document.querySelector('meta[name="description"]').setAttribute("content", languages[params.get("lang")].description);
-    document.querySelector('meta[property="og:description"]').setAttribute("content", languages[params.get("lang")].description);
-}
