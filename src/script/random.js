@@ -115,6 +115,7 @@ function languageToggle(e) {
       backup = "Català";
     break;
   }
+  if(!lang) return;
   selector.innerHTML = e.className || backup ? e.className || backup : e
   selector.className = selector.className.replace(" es", "").replace(" en", "").replace(" ca", "") + ` ${lang}`
   c.lang.value = e.className ? e.className : e
