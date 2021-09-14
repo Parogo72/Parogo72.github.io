@@ -90,7 +90,6 @@ function radioToggle(e) {
 
 function languageToggle(e) {
   let lang;
-  let backup;
   let selector = document.getElementById("lang-selector")
   switch (e.className ? e.className : e) {
     case 'Español':
@@ -102,40 +101,9 @@ function languageToggle(e) {
     case 'Català':
       lang = "ca";
     break;
-    case 'en':
-      lang = e;
-      backup = "English";
-    break;
-    case 'es':
-      lang = e;
-      backup = "Español";
-    break;
-    case 'ca':
-      lang = e;
-      backup = "Català";
-    break;
   }
   if(!lang) return;
-  selector.innerHTML = e.className || backup ? e.className || backup : e
-  selector.className = selector.className.replace(" es", "").replace(" en", "").replace(" ca", "") + ` ${lang}`
-  c.lang.value = e.className ? e.className : e
-  document.documentElement.lang = lang
-  params.set("lang", lang)
-  window.history.pushState(null, null, "?" + params.toString());
-  document.querySelector('meta[name="description"]').setAttribute("content", languages[lang].description || languages["es"].despription);
-  document.querySelector('meta[property="og:description"]').setAttribute("content", languages[lang].description || languages["es"].despription);
-  langToggle(lang)
-}
-
-function langToggle(lang) {
-      let lang_obj = languages[lang]
-      let elements = document.getElementsByClassName('lang')
-      let array_lang = Object.entries(lang_obj)
-      Array.from(elements).forEach(e => {
-          let val = array_lang.find(a=> {
-            return e.className.includes(" " + a[0] + " ")
-          })
-          if(!val) return;
-          e.innerHTML = val[1]
-      })
+  selector.innerHTML = e.className ? e.className : e
+  selector.className = selector.className.replace(" es", "").replace(" en", "").replace(" ca", "") + ` ${lang}`;
+  window.history.pushState(null, null, lang);
 }
