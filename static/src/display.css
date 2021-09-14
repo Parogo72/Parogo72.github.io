@@ -26,7 +26,7 @@
     --line: rgb(27, 27, 27);
 }
 .Dark {
-    --dropdown: rgb(1, 107, 179);
+    --dropdown: rgb(8, 49, 139);
     --output-value: rgb(125, 76, 199);
     --output-caculated: rgb(139, 38, 179);
     --wrong: rgb(190, 0, 0);
