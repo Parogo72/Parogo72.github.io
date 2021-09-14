@@ -26,7 +26,7 @@ const languages = {
         "n_s": "Mols Solut",
         "n_d": "Mols Dissolvent",
         "n_D": "Mols Dissolució",
-        "v_a": "Volum Additius",
+        "v_a": "Volums Additius",
         "redondeo": "Arrodoniment",
         "notation": "Notació",
         "language": "Llengua",
