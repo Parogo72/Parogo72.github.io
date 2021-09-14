@@ -10,8 +10,8 @@ class Variable {
         let element2 = document.getElementById(this.id)
         let name = " wrong2"
         if(element2.parentNode.classList.contains(" wrong2")) name =" wrong";
-        element ? element.classList.remove("wrong").remove("wrong2") : null;
-        element2.parentNode.classList.remove("wrong").remove("wrong2");
+        element ? element.classList.remove("wrong", "wrong2") : null;
+        element2.parentNode.classList.remove("wrong", "wrong2");
         if(bool) {
             element ? element.parentNode.classList.add(name) : null;
             element2.parentNode.classList.add(name)

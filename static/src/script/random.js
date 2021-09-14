@@ -2,12 +2,12 @@ let current = 0;
 function dropdown(a) { 
     if (a[0].parentNode.className.indexOf("showed") == -1) {
         current++;
-        a[0].parentNode.className += " showed";
+        a[0].parentNode.classList.add("showed");
         a[0].parentNode.style.zIndex = current;
         a.shift()
         Array.from(a[0].children).forEach(i => i.classList.toggle("show"));   
     } else { 
-        a[0].parentNode.className = a[0].parentNode.className.replace(" showed", "");
+        a[0].parentNode.classList.remove("showed");
         a[0].parentNode.style.zIndex = current;
         a.shift()
         Array.from(a[0].children).forEach(i => i.classList.remove("show"));   
@@ -16,32 +16,32 @@ function dropdown(a) {
 
 
 function toggle(element) {
-  if(element.className.includes("Raised")) {
-    element.className += " Pressed";
-    element.className = element.className.replace(" Raised", "")
+  if(element.classList.contains("Raised")) {
+    element.classList.add("Pressed");
+    element.classList.remove("Raised");
   } else {
-    element.className += " Raised";
-    element.className = element.className.replace(" Pressed", "")
+    element.classList.add("Raised");
+    element.classList.remove("Pressed");
   }
-  if(element.className.includes("DarkButton")) darkToggle();
-  if(element.className.includes("ConfigButton")) settingsToggle();
+  if(element.classList.contains("DarkButton")) darkToggle();
+  if(element.classList.contains("ConfigButton")) settingsToggle();
 }
 
 function darkToggle() {
   let element = document.documentElement
   let button = document.getElementsByClassName("DarkButton")[0]
   let logo = document.getElementById("logo");
-  c.theme.value = element.className.includes("Dark") ? "white" : "black"
-  if(element.className.includes("Dark")) {
-    button.className += " Raised";
-    button.className = button.className.replace(" Pressed", "")
-    element.className = element.className.replace(" Dark", "")
-    logo.src = "https://parogo72.github.io/images/logo.png"
+  c.theme.value = element.classList.contains("Dark") ? "white" : "black"
+  if(element.classList.contains("Dark")) {
+    button.classList.add("Raised");
+    button.classList.remove("Pressed")
+    element.classList.remove("Dark")
+    logo.src = "/images/logo.png"
   } else {
-    element.className += " Dark";
-    button.className += " Pressed";
-    button.className = button.className.replace(" Raised", "")
-    logo.src = "https://parogo72.github.io/images/logo-dark.png"
+    element.classList.add("Dark");
+    button.classList.add("Pressed");
+    button.classList.remove("Raised")
+    logo.src = "/images/logo-dark.png"
   }
   
 }
@@ -49,12 +49,12 @@ function darkToggle() {
 function settingsToggle() {
   let element = document.getElementById("settings")
   let button = document.getElementById("settingsToggle")
-  if(element.className.includes("Displayed")) {
-    button.className = button.className.replace(" Pressed", " Raised")
-    element.className = element.className.replace(" Displayed", "")
+  if(element.classList.contains("Displayed")) {
+    button.classList.replace("Pressed", "Raised")
+    element.classList.remove("Displayed")
   } else {
-    button.className = button.className.replace(" Raised", " Pressed")
-    element.className += " Displayed";
+    button.classList.replace("Raised", "Pressed")
+    element.classList.add("Displayed")
   }
 }
 

@@ -50,7 +50,7 @@ function end() {
     
     let had_value = false;
     if(element.parentNode.classList.contains("has_value") && (previous[x] || previous[x] === 0) && previous[x] !== i[1].value) had_value = true;
-    element.parentNode.classList.remove("calculated").remove("had_value").remove("has_value");
+    element.parentNode.classList.remove("calculated", "had_value", "has_value")
     previous[x] = i[1].value
     if(!i[1].value && i[1].value !== 0) {
       element.parentNode.style.display = 'none';
