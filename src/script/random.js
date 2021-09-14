@@ -110,8 +110,7 @@ function languageToggle(e) {
 }
 
 function langToggle(lang) {
-  fetch(`https://parogo72.github.io/src/scripts/languages/${lang}.json`).then(data => {
-    data.json().then(lang_obj => {
+      let lang_obj = languages[lang]
       let elements = document.getElementsByClassName('lang')
       let array_lang = Object.entries(lang_obj)
       Array.from(elements).forEach(e => {
@@ -121,8 +120,6 @@ function langToggle(lang) {
           if(!val) return;
           e.innerHTML = val[1]
       })
-    }) 
-  })
 }
 // Close the dropdown if the user clicks outside of it
 /*window.onclick = function(event) {
