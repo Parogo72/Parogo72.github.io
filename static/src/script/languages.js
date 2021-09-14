@@ -30,7 +30,7 @@ const languages = {
         "redondeo": "Arrodoniment",
         "notation": "Notació",
         "language": "Llengua",
-        "description": ""
+        "description": "Calculadora online per resoldre diferents tipus d’exercicis de dissolucions. Ràpida, eficaç, fàcil d’utilitzar y sense anuncis."
     },
     en: {
         "m": "Masses",

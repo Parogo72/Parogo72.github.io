@@ -4,6 +4,7 @@ const app = express();
 const t = new Map();
 t.set('es', require('./views/es.json'));
 t.set('en', require('./views/en.json'));
+t.set('ca', require('./views/ca.json'));
 
 app.set('view engine', 'ejs');
 
@@ -14,7 +15,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/:lang', (req, res, next) => {
-    if(!/en|es/.test(req.params.lang)) { 
+    if(!/en|es|ca/.test(req.params.lang)) { 
         res.redirect('/');
         return;
     }
