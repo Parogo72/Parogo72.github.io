@@ -106,5 +106,4 @@ function languageToggle(e) {
   selector.innerHTML = e.className ? e.className : e
   selector.className = selector.className.replace(" es", "").replace(" en", "").replace(" ca", "") + ` ${lang}`;
   window.history.pushState(null, null, lang);
-  location.reload()
 }
