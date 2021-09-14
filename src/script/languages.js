@@ -29,7 +29,8 @@ const languages = {
         "v_a": "Volum Additius",
         "redondeo": "Arrodoniment",
         "notation": "Notació",
-        "language": "Llengua"
+        "language": "Llengua",
+        "description": ""
     },
     en: {
         "m": "Masses",
@@ -61,7 +62,9 @@ const languages = {
         "v_a": "Additive Volumes",
         "redondeo": "Rounding",
         "notation": "Notation",
-        "language": "Language"
+        "language": "Language",
+        "description": "Online calculator to solve multiple solutions problems. Fast, functional, easy to use and without ads.",
+        
     },     
     es: {
         "m": "Masas",
@@ -93,6 +96,7 @@ const languages = {
         "v_a": "Volúmenes Aditivos",
         "redondeo": "Redondeo",
         "notation": "Notación",
-        "language": "Idioma"
+        "language": "Idioma",
+        "description": "Calculadora online para resolver distintos tipos de ejercicios de disoluciones. Rápida, eficaz, fácil de utilizar y sin anuncios."
     }
 }
