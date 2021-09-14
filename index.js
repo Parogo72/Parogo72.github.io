@@ -2,9 +2,9 @@ const express = require('express');
 const app = express();
 
 const t = new Map();
-t.set('es', require('./views/es.json'));
-t.set('en', require('./views/en.json'));
-t.set('ca', require('./views/ca.json'));
+t.set('es', require('./languages/es.json'));
+t.set('en', require('./languages/en.json'));
+t.set('ca', require('./languages/ca.json'));
 
 app.set('view engine', 'ejs');
 

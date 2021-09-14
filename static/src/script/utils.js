@@ -35,16 +35,15 @@ const check_var = (id, ans, i) => {
 
 const change_style = (id, bool) => {
     let element = document.getElementsByName(id)[0]
-        let element2 = document.getElementById(id)
-        let name = " wrong2"
-        let b = name
-        if(element2.parentNode.className.includes(" wrong2")) name =" wrong";
-        element ? element.parentNode.className = element.parentNode.className.replace(b, "").replace(" wrong", "") : null;
-        element2.parentNode.className = element2.parentNode.className.replace(b, "").replace(" wrong", "")
-        if(bool) {
-            element ? element.parentNode.className += name : null;
-            element2.parentNode.className += name
-        } 
+    let element2 = document.getElementById(id)
+    let name = " wrong2"
+    if(element2.parentNode.classList.contains(" wrong2")) name =" wrong";
+        element ? element.classList.remove("wrong").remove("wrong2") : null;
+        element2.parentNode.classList.remove("wrong").remove("wrong2");
+    if(bool) {
+        element ? element.parentNode.classList.add(name) : null;
+        element2.parentNode.classList.add(name)
+    } 
 }
 
 let table = {
@@ -248,14 +247,11 @@ const arr_loop = (array) => {
 
 function copy(e) {
     const copyText = e;
-  
-    /* Select the text field */
+
     copyText.select();
   
-    /* Copy the text inside the text field */
     document.execCommand("copy");
-  
-    /* Alert the copied text */
+
     alert("Texto copiado");
   }
 
@@ -263,7 +259,3 @@ function numberChangeEnd(element, value) {
     if(value > 1000) exponent ? value = Number(value).toExponential(aprox) :  value = Number(value).toExponential(aprox).replace(/e\+?/, 'x10^')
     element.innerHTML = value || value === 0 ? value : '---'
 }
-
-//e.addEventListener ? e.addEventListener('change', () => main()) : e.attachEvent('onchange', () => main()));
-//afcn('input_value').forEach(e => e.innerHTML += '<button class="copy-button">copy</button>');
-//afcn('copy-button').forEach(e => createEventListener(e, 'click', () => copy(Array.from(e.parentNode.childNodes).find(e => e instanceof HTMLInputElement))));

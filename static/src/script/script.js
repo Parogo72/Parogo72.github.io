@@ -49,8 +49,8 @@ function end() {
     if(!element) return;
     
     let had_value = false;
-    if(element.parentNode.className.includes("has_value") && (previous[x] || previous[x] === 0) && previous[x] !== i[1].value) had_value = true;
-    element.parentNode.className = element.parentNode.className.replace(" calculated", "").replace(" had_value", "").replace(" has_value", "")
+    if(element.parentNode.classList.contains("has_value") && (previous[x] || previous[x] === 0) && previous[x] !== i[1].value) had_value = true;
+    element.parentNode.classList.remove("calculated").remove("had_value").remove("has_value");
     previous[x] = i[1].value
     if(!i[1].value && i[1].value !== 0) {
       element.parentNode.style.display = 'none';
@@ -60,9 +60,9 @@ function end() {
       element.parentNode.style.display = 'flex'
     }
     if(input_element.value) {
-      had_value ? element.parentNode.className += " had_value" : element.parentNode.className += " has_value";
+      had_value ? element.parentNode.classList.add("had_value") : element.parentNode.classList.add("has_value");
     } else {
-      element.parentNode.className += " calculated";
+      element.parentNode.classList.add("calculated");
     }
     i[1].lastValue = i[1].value
     x++
