@@ -121,6 +121,7 @@ function languageToggle(e) {
   c.lang.value = e.className ? e.className : e
   document.documentElement.lang = lang
   params.set("lang", lang)
+  history.pushState(null, null, "?" + params.toString());
   document.querySelector('meta[name="description"]').setAttribute("content", languages[lang].description || languages["es"].despription);
   document.querySelector('meta[property="og:description"]').setAttribute("content", languages[lang].description || languages["es"].despription);
   langToggle(lang)
