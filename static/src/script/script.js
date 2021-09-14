@@ -74,6 +74,6 @@ afcn('ipt').forEach(e => createEventListener(e, 'change', main));
 main()
 
 if(c.theme.value === "black") darkToggle();
-languageToggle(c.lang.value)
+if(!/\/ca|\/en|\/es/.test(window.location.href)) languageToggle(c.lang.value);
 radioToggle(c.round.value)
 radioToggle(c.notation.value)
