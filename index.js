@@ -27,5 +27,4 @@ app.get('/', (req, res) => {
     res.status(404).send('404 NOT FOUND :\'v');
 });
 app.use(express.static('static'))
-app.use(express.favicon("/images/favicon-light.ico")); 
 app.listen(process.env.PORT || 3000, () => console.log('Deployed'));
