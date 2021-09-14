@@ -25,4 +25,5 @@ app.get('/:lang', (req, res, next) => {
 app.get('/', (req, res) => {
     res.status(404).send('404 NOT FOUND :\'v');
 });
+app.use(express.static('static'))
 app.listen(process.env.PORT || 3000, () => console.log('Deployed'));
