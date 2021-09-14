@@ -80,6 +80,7 @@
     line-height: 2;
     cursor: pointer;
     align-items: center;
+    user-select: none;
 }
 .lang-menu .selected-lang:before {
     content: '';
@@ -127,6 +128,7 @@
     align-items: center;
     text-align: left;
     margin: 0;
+    user-select: none;
 }
 
 .lang-menu ul li:hover {
