@@ -110,7 +110,7 @@ function languageToggle(e) {
 }
 
 function langToggle(lang) {
-  fetch(`https://parogo72.github.io/src/languages/${lang}.json`).then(lang_obj => {
+  fetch(`https://parogo72.github.io/src/scripts/languages/${lang}.json`).then(lang_obj => {
     let elements = document.getElementsByClassName('lang')
     let array_lang = Object.entries(lang_obj)
     Array.from(elements).forEach(e => {
