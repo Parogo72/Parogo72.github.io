@@ -90,8 +90,8 @@ function radioToggle(e) {
 
 function languageToggle(e) {
   let lang;
+  let backup;
   let selector = document.getElementById("lang-selector")
-  if(["en","es","ca"].includes(e)) lang = e;
   switch (e.className ? e.className : e) {
     case 'Español':
       lang = "es";
@@ -102,11 +102,25 @@ function languageToggle(e) {
     case 'Català':
       lang = "ca";
     break;
+    case 'en':
+      lang = e;
+      backup = "English";
+    break;
+    case 'es':
+      lang = e;
+      backup = "Español";
+    break;
+    case 'ca':
+      lang = e;
+      backup = "Català";
+    break;
   }
-  selector.innerHTML = e.className ? e.className : e
+  selector.innerHTML = e.className || backup ? e.className || backup : e
   selector.className = selector.className.replace(" es", "").replace(" en", "").replace(" ca", "") + ` ${lang}`
   c.lang.value = e.className ? e.className : e
   document.documentElement.lang = lang
+  document.querySelector('meta[name="description"]').setAttribute("content", languages[params.get("lang")].description);
+  document.querySelector('meta[property="og:description"]').setAttribute("content", languages[params.get("lang")].description);
   langToggle(lang)
 }
 
