@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const favicon = require('serve-favicon');
+
 
 const t = new Map();
 t.set('es', require('./languages/es.json'));
@@ -26,5 +28,6 @@ app.get('/:lang', (req, res, next) => {
 app.get('/', (req, res) => {
     res.status(404).send('404 NOT FOUND :\'v');
 });
+app.use(favicon(__dirname + '/static/images/favicon-light.ico'));
 app.use(express.static('static'))
 app.listen(process.env.PORT || 3000, () => console.log('Deployed'));
