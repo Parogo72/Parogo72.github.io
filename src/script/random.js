@@ -110,16 +110,18 @@ function languageToggle(e) {
 }
 
 function langToggle(lang) {
-  fetch(`https://parogo72.github.io/src/scripts/languages/${lang}.json`).then(lang_obj => {
-    let elements = document.getElementsByClassName('lang')
-    let array_lang = Object.entries(lang_obj)
-    Array.from(elements).forEach(e => {
-        let val = array_lang.find(a=> {
-          return e.className.includes(" " + a[0] + " ")
-        })
-        if(!val) return;
-        e.innerHTML = val[1]
-    })
+  fetch(`https://parogo72.github.io/src/scripts/languages/${lang}.json`).then(data => {
+    data.json().then(lang_obj => {
+      let elements = document.getElementsByClassName('lang')
+      let array_lang = Object.entries(lang_obj)
+      Array.from(elements).forEach(e => {
+          let val = array_lang.find(a=> {
+            return e.className.includes(" " + a[0] + " ")
+          })
+          if(!val) return;
+          e.innerHTML = val[1]
+      })
+    }) 
   })
 }
 // Close the dropdown if the user clicks outside of it
