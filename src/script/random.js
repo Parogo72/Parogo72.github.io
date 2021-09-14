@@ -91,6 +91,7 @@ function radioToggle(e) {
 function languageToggle(e) {
   let lang;
   let selector = document.getElementById("lang-selector")
+  if(["en","es","ca"].includes(e)) lang = e;
   switch (e.className ? e.className : e) {
     case 'Español':
       lang = "es";
