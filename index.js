@@ -8,6 +8,8 @@ t.set('ca', require('./languages/ca.json'));
 
 app.set('view engine', 'ejs');
 
+app.disable('x-powered-by');
+
 app.get('/', (req, res) => {
     
     const text = t.get('es');
