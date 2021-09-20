@@ -23,8 +23,10 @@ app.get('/:lang', (req, res, next) => {
     res.render('index.ejs', text);
 });
 
-app.get('/', (req, res) => {
-    res.status(404).send('404 NOT FOUND :\'v');
+app.use(express.static('static'));
+
+app.get('*', (req, res) => {
+    res.status(404).send('<h1>404 PAGE NOT FOUND</h1><p>Click <a href="/">here</a> to go to the home page.</p>');
 });
-app.use(express.static('static'))
+
 app.listen(process.env.PORT || 3000, () => console.log('Deployed'));
