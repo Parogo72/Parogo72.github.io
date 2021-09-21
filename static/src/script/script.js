@@ -87,9 +87,11 @@ radioToggle(c.notation.value)
 function dataEncoder (keys) {
   let keys_end = keys.filter(i => document.getElementById(i) && document.getElementById(i).value && document.getElementById(i).checked !== false);
   let values_end = keys_end.map(i => document.getElementById(i).checked || document.getElementById(i).value);
+  console.log(keys_end)
   if(keys_end.length === 0) return;
   const str = `${keys_end.map(i => i + '1').join('&')}$${values_end.join('&')}`;
   const base64 = window.btoa(str)
   if(base64.endsWith('=')) return base64.slice(0, -1)
+  console.log(base64)
   return base64
 }
