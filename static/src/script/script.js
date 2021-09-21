@@ -85,7 +85,7 @@ radioToggle(c.round.value)
 radioToggle(c.notation.value)
 
 function dataEncoder (keys) {
-  let keys_end = keys.filter(i => document.getElementById(i) && document.getElementById(i).value || (document.getElementById(i).type === 'checkbox' && document.getElementById(i).checked !== false));
+  let keys_end = keys.filter(i => document.getElementById(i) && document.getElementById(i).value && (document.getElementById(i).value !== 'on' || document.getElementById(i).checked !== false));
   let values_end = keys_end.map(i => document.getElementById(i).checked || document.getElementById(i).value);
   console.log(keys_end)
   if(keys_end.length === 0) return;
