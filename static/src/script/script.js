@@ -41,6 +41,10 @@ let previous = [];
 let x = 0;
 function end() {
   x = 0;
+  let data = dataEncoder(Object.keys(values))
+  let params = new URL(window.location.href).searchParams
+  params.set("data", data)
+  if(data) history.pushState(null, null, "?" + params.toString());
   for(let i of Object.entries(values)) {
     
     let element = document.getElementsByName(i[0])[0];
@@ -67,6 +71,7 @@ function end() {
     i[1].lastValue = i[1].value
     x++
   }
+  
 }
 const afcn = id => Array.from(document.getElementsByClassName(id));
 const createEventListener = (enode, ename, callback) => enode.addEventListener ? enode.addEventListener(ename, callback) : enode.attachEvent(`on${ename}`, callback);
@@ -77,3 +82,13 @@ if(c.theme.value === "black") darkToggle();
 if(!/\/ca|\/en|\/es/.test(window.location.href)) languageToggle(c.lang.value);
 radioToggle(c.round.value)
 radioToggle(c.notation.value)
+
+function dataEncoder (keys) {
+  let keys_end = keys.filter(i => document.getElementById(i) && document.getElementById(i).value && document.getElementById(i).checked !== false);
+  let values_end = keys_end.map(i => document.getElementById(i).checked || document.getElementById(i).value);
+  if(keys_end.length === 0) return;
+  const str = `${keys_end.map(i => i + '1').join('&')}$${values_end.join('&')}`;
+  const base64 = window.btoa(str)
+  if(base64.endsWith('=')) return base64.slice(0, -1)
+  return base64
+}
