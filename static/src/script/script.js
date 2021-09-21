@@ -44,6 +44,7 @@ function end() {
   let data = dataEncoder(Object.keys(values))
   let params = new URL(window.location.href).searchParams
   params.set("data", data)
+  console.log(data)
   if(data) history.pushState(null, null, "?" + params.toString());
   for(let i of Object.entries(values)) {
     
