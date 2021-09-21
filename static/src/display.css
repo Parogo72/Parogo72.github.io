@@ -1,0 +1,216 @@
+:root {
+    --dropdown: rgb(0, 153, 255);
+    --output-value: rgb(169, 112, 255);
+    --output-caculated: rgb(216, 117, 255);
+    --wrong: rgb(255, 0, 0);
+    --wrong-strong: rgb(201, 0, 0);
+    --wrong-light: rgb(255, 94, 94);
+    --input: rgba(73, 189, 255, 1);
+    --input-strong: rgb(61, 132, 255);
+    --input-light: rgb(134, 177, 252);
+    --tab-active: rgb(2,118,253);
+    --tab-hover: rgb(45,190,252);
+    --tab-inactive: #999;
+    --darkshadow: rgba(0, 0, 0, 0.24);
+    --lightshadow: rgba(0, 0, 0, 0.12);
+    --light-animation: rgb(252, 252, 252);
+    --strong-animation: rgb(135, 135, 135);
+    --body-bg: rgb(255, 255, 255);
+    --header-bg: rgb(250, 251, 252);
+    --text: rgb(8, 8, 8);
+    --drop-text: rgb(255, 255, 255);
+    --output-bg: rgb(255, 255, 255);
+    --input-bg: rgb(255, 255, 255);
+    --radio-bg: rgb(91, 79, 255);
+    --language-bg: rgb(235, 235, 235);
+    --line: rgb(27, 27, 27);
+}
+.Dark {
+    --dropdown: rgb(8, 49, 139);
+    --output-value: rgb(125, 76, 199);
+    --output-caculated: rgb(139, 38, 179);
+    --wrong: rgb(190, 0, 0);
+    --wrong-strong: rgb(143, 0, 0);
+    --wrong-light: rgb(233, 30, 30);
+    --input: rgb(0, 75, 204);
+    --input-strong: rgb(30, 94, 204);
+    --input-light: rgb(43, 111, 228);
+    --tab-active: rgb(2,118,253);
+    --tab-hover: rgb(45,190,252);
+    --tab-inactive: #999;
+    --darkshadow: rgba(255, 255, 255, 0.24);
+    --lightshadow: rgba(226, 226, 226, 0.12);
+    --light-animation: rgb(83, 83, 83);
+    --strong-animation: rgb(7, 7, 7);
+    --body-bg: rgb(27, 27, 29);
+    --header-bg: rgb(37, 37, 37);
+    --text: rgb(201, 200, 200);
+    --drop-text: rgb(201, 200, 200);
+    --output-bg: rgb(36, 36, 36);
+    --input-bg: rgb(36, 36, 36);
+    --radio-bg: rgb(1, 107, 179);
+    --language-bg: rgb(53, 53, 53);
+    --line: rgb(223, 223, 223);
+}
+
+
+
+body { 
+    margin: 0;  
+    background-color: var(--body-bg);
+} 
+* { font-family: 'Roboto', sans-serif; margin: auto;}
+ul { margin: 10px; padding: 0; list-style-type: none;}
+a, input {
+    font-size: 17px; 
+}
+nav {
+    display: flex;
+    padding: 0.4em
+}
+i {
+    font-style: normal;
+}
+
+header label {
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.1s ease-in-out, color 0.3s linear, background-color 0.1s linear;
+}
+
+svg {
+    height: 2em;
+}
+img {
+    height: 2em;
+    cursor: pointer;
+}
+
+label#type2 {
+    display: none;
+}
+.Raised {
+    box-shadow: 0 1px 3px var(--lightshadow), 0 1px 2px var(--darkshadow);
+}
+
+.Raised svg {
+    height: 1.7rem;
+}
+
+.Pressed svg {
+    height: 1.7rem;
+    color: var(--body-bg);
+}
+
+.Pressed {
+    box-shadow: inset 0 1px 3px rgb(0 0 0 / 24%), inset 0 1px 2px rgb(0 0 0 / 48%);
+    background-color: var(--dropdown);
+}
+
+.Button {  
+    border-radius: 0.3rem;
+    padding: 0.4rem 0.4rem;
+}
+header svg > g {
+    stroke-width: 5;
+    stroke: currentColor;
+    fill: currentColor;
+}
+header {
+    user-select: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    box-shadow: 0 1px 3px var(--lightshadow), 0 1px 2px var(--darkshadow);
+    background-color: var(--header-bg);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000000000000;
+}
+
+header svg + a {
+    margin-inline-start: calc(0.3rem / 2);
+}
+
+header label > a, header label > a[href]:hover {
+    text-decoration: inherit;
+    color: inherit !important;
+}
+
+header label {
+    color: var(--tab-inactive);
+}
+
+header label:hover {
+    color: var(--tab-hover);
+}
+.Raised:hover {
+    color: var(--tab-hover);
+}
+
+nav + label {
+    transition: box-shadow 0.3s ease-in-out, color 0.3s linear;
+}
+
+div#main {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    align-content: center;
+    margin-top: 50px;
+}
+#input-container {
+    font-size: 17px; 
+    font-weight:300; 
+    position: relative;
+    width: 55%;
+    display: grid;
+    row-gap: 2rem;
+    column-gap: 0.5rem;
+    grid-auto-rows: 8rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1.5fr));
+    align-items: center;
+    justify-items: center;
+}
+#response-container {
+    font-size: 17px; 
+    font-weight:300; 
+    width: 42%;
+    position: relative;
+    display: grid;
+    column-gap: 0.3rem;
+    row-gap: 0.5rem;
+    grid-auto-rows: 5rem;
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    align-items: center;
+    justify-items: center;
+}
+hr {
+    display: none;
+}
+
+@media screen and (max-width: 950px) {
+    div#main { display: block;}
+    #input-container {
+        width: 90%;
+        margin-left: 3%;
+    }
+    #response-container {
+        width: 90%;
+        margin-left: 3%;
+        row-gap: 2rem;
+    }
+    hr {
+        display: block;
+        color: var(--line);
+    }
+}
+@media screen and (max-width: 400px) {
+    nav > label > a {
+        display: none;
+    }
+}
