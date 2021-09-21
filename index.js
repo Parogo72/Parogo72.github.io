@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/:lang', (req, res, next) => {
+app.get('/:lang', (req, res) => {
     if(!/en|es|ca/.test(req.params.lang)) { 
         res.redirect('/');
         return;
