@@ -1,31 +1,6 @@
 const express = require('express');
 const app = express();
 
-let values1 = {
-    'm_s1': '',
-    'm_d1': '',
-    'm_D1': '',
-    'v_s1': '',
-    'v_d1': '',
-    'v_D1': '',
-    'd_s1': '',
-    'd_d1': '',
-    'd_D1': '',
-    'p_m1': '',
-    'p_v1': '',
-    'c1': '',
-    'molaridad1': '',
-    'molalidad1': '',
-    'm_mol_s1': '',
-    'm_mol_d1': '',
-    'm_mol_D1': '',
-    'f_m1': '',
-    'n_s1': '',
-    'n_d1': '',
-    'n_D1': '',
-    'v_a1': false
-}
-
 const t = new Map();
 t.set('es', require('./languages/es.json'));
 t.set('en', require('./languages/en.json'));
@@ -69,6 +44,8 @@ app.get('*', (req, res) => {
 app.listen(process.env.PORT || 3000, () => console.log('Deployed'));
 
 function decode(data) {
+    let values1 = {'m_s1': '','m_d1': '','m_D1': '','v_s1': '','v_d1': '','v_D1': '','d_s1': '','d_d1': '','d_D1': '','p_m1': '','p_v1': '','c1': '','molaridad1': '','molalidad1': '','m_mol_s1': '','m_mol_d1': '','m_mol_D1': '','f_m1': '','n_s1': '','n_d1': '','n_D1': '','v_a1': false
+}
     if(!data) {
         return values1
     }
