@@ -8,8 +8,8 @@ class Variable {
     changeStyle(bool) {
         let element = document.getElementsByName(this.id)[0]
         let element2 = document.getElementById(this.id)
-        let name = " wrong2"
-        if(element2.parentNode.classList.contains(" wrong2")) name =" wrong";
+        let name = "wrong2"
+        if(element2.parentNode.classList.contains("wrong2")) name ="wrong";
         element ? element.classList.remove("wrong", "wrong2") : null;
         element2.parentNode.classList.remove("wrong", "wrong2");
         if(bool) {
