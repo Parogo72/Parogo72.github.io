@@ -191,7 +191,18 @@
     }
 }
 
-@media screen and (max-height: 550px) {
+@media screen and (max-height: 750px) {
+    .settings-container {
+        top: 10%;
+        width: 70%;
+        margin-left: -35%;
+        overflow: auto;
+        margin-top: 5%;
+        height: 400px
+    }
+}
+
+@media screen and (max-height: 500px) {
     .settings-container {
         top: 10%;
         width: 70%;
@@ -201,3 +212,4 @@
         height: 250px
     }
 }
+
