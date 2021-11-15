@@ -28,6 +28,7 @@ const check_var = (id, ans, i) => {
     let obj = values[id];
     let val = obj.calcValue()
     if(!isNaN(val) && (Math.abs(val - ans) >  10**(-aprox) || ans < 0 || val < 0) && val !== null) {
+        console.log(i, ans, val)
         issue_arr.push(id)
     } 
     return !values[id].value && values[id].value !== 0;
