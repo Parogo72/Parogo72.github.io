@@ -17,7 +17,7 @@
         "c": "Concentration",
         "molaridad": "Molarity",
         "molalidad": "Molality",
-        "m_mol": "Molar Nasses",
+        "m_mol": "Molar Masses",
         "m_mol_s": "Solute Molar Mass",
         "m_mol_d": "Solvent Molar Mass",
         "m_mol_D": "Solution Molar Mass",
