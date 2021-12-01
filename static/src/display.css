@@ -29,8 +29,8 @@
 }
 .Dark {
     --dropdown: rgb(118, 60, 254);
-    --output-value: rgb(211, 132, 63);
-    --output-caculated: rgb(211, 206, 63);
+    --output-value: rgb(149, 72, 209);
+    --output-caculated: rgb(209, 72, 201);
     --wrong: rgb(190, 0, 0);
     --wrong-strong: rgb(143, 0, 0);
     --wrong-light: rgb(233, 30, 30);

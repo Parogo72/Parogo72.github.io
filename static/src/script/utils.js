@@ -268,3 +268,11 @@ function move(e) {
         console.log(e.childNodes[3].childNodes[1])
     }
 }
+
+window.addEventListener('scroll', function() {
+    let element = document.getElementById('response-container')
+    let position = element.getBoundingClientRect();
+    if(position.top < this.window.innerHeight && position.bottom >= 0) {
+        if(document.getElementById("not-bubble").classList.contains("visible")) document.getElementById("not-bubble").classList.toggle("visible");
+    }
+})
