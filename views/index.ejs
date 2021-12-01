@@ -11,6 +11,7 @@
 			</noscript>
 
 			<link rel="stylesheet" href="/src/display.css" type="text/css" />
+			<link rel="stylesheet" href="/src/button.css" type="text/css" />
 			<link rel="stylesheet" href="/src/inputs.css" type="text/css"/>
 			<link rel="stylesheet" href="/src/settings.css" type="text/css"/>
 			<link rel="icon" href="/images/favicon-light.ico?v=1.0"/>
@@ -32,8 +33,9 @@
 			<script src="/src/script/theme.js"></script>
             <script src="/src/script/random.js"></script>
 	</head>
+	<a id="top"></a>
 	<body>
-
+		
 		<!-- HEADER -->
 
 		<header>
@@ -72,7 +74,21 @@
 		</header>
 
 		<!-- HEADER END -->
-
+		<!-- BUTTON -->
+			<div class="button-div" onclick="move(this)">
+				<svg height="100" width="100" class="notification" id="not-bubble">
+					<circle cx="5" cy="5" r="10" stroke="black" stroke-width="1" fill="red">
+						<animate attributeType="XML" attributeName="fill" from="rgb(249, 101, 56 )" to="rgb(255, 0, 0)" dur="2s" repeatCount="indefinite"/>
+					</circle>
+				</svg>
+				<a class="button-a" href="#response-container">
+					<svg class="arrow down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="5 0 50 80" xml:space="preserve">
+						<polyline fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="
+					0.375, 35.375 28.375, 0.375 58.67, 35.375 " />
+					  </svg>
+				</a>
+			</div>
+		<!-- BUTTON END -->
 		<!-- SETTINGS -->
 
 		<div class="settings-container" id="settings">

@@ -260,3 +260,11 @@ function numberChangeEnd(element, value) {
     if(value > 1000) exponent ? value = Number(value).toExponential(aprox) :  value = Number(value).toExponential(aprox).replace(/e\+?/, 'x10^')
     element.innerHTML = value || value === 0 ? value : '---'
 }
+
+function move(e) {
+    console.log(e.childNodes[1])
+    if(e.childNodes[1].classList.contains("visible")) {
+        e.childNodes[1].classList.toggle("visible");
+        console.log(e.childNodes[3].childNodes[1])
+    }
+}

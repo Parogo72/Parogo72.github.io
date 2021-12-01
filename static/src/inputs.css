@@ -261,8 +261,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .showed {
-    background-color: var(--body-bg);
-    box-shadow: 2px 2px 10px #666;
+    background-color: var(--drop-bg);
+    border: 1px solid var(--bg-line);
     margin-top: 21px;
 }
 li label {

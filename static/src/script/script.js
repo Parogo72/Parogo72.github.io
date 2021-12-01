@@ -45,6 +45,7 @@ function end() {
   let params = new URL(window.location.href).searchParams
   params.set("data", data)
   if(data) history.pushState(null, null, "?" + params.toString());
+  
   for(let i of Object.entries(values)) {
     
     let element = document.getElementsByName(i[0])[0];
@@ -65,8 +66,10 @@ function end() {
     }
     if(input_element.value) {
       had_value ? element.parentNode.classList.add("had_value") : element.parentNode.classList.add("has_value");
-    } else {
+    } else if(element.value) {
       element.parentNode.classList.add("calculated");
+      if(!document.getElementById("not-bubble").classList.contains("visible")) document.getElementById("not-bubble").classList.toggle("visible");
+      console.log(element, element.value)
     }
     i[1].lastValue = i[1].value
     x++

@@ -27,3 +27,4 @@ let values = {
   let issue_arr = [];
   let loop;
   let check_loop = true;
+  let new_things = false;
