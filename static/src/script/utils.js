@@ -274,6 +274,16 @@ function move(e) {
     if(e.childNodes[1].classList.contains("visible")) {
         e.childNodes[1].classList.toggle("visible");
     }
+	console.log(e,childNodes[3]
+    if(e.childNodes[3].childNodes[1].classList.contains('up')) {
+	 e.childNodes[3].childNodes[1].classList.remove('up')  
+	 e.childNodes[3].childNodes[1].classList.add('down') 
+		e.childNodes[3].href = "#response-container"
+    } else if(e.childNodes[3].childNodes[1].classList.contains('down')) {
+	 e.childNodes[3].childNodes[1].classList.remove('down')  
+	 e.childNodes[3].childNodes[1].classList.add('up')
+	    e.childNodes[3].href = "#top"
+    }
 }
 
 window.addEventListener('scroll', function() {
@@ -281,5 +291,8 @@ window.addEventListener('scroll', function() {
     let position = element.getBoundingClientRect();
     if(position.top < this.window.innerHeight && position.bottom >= 0) {
         if(document.getElementById("not-bubble").classList.contains("visible")) document.getElementById("not-bubble").classList.toggle("visible");
+	    if(document.getElementById("button-div").childNodes[3].childNodes[1].classList.contains('down')) move(document.getElementById("button-div"));
+    } else {
+	    if(document.getElementById("button-div").childNodes[3].childNodes[1].classList.contains('up')) move(document.getElementById("button-div"));
     }
 })
