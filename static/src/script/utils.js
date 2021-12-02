@@ -160,56 +160,56 @@ let table = {
     'Hs': 277
 }
 
- ​const​ ​mole_arr​ ​=​ ​(​string​)​ ​=>​ ​{ 
- ​    ​let​ ​arr​ ​=​ ​[​] 
- ​    ​if​(​parseFloat​(​string​)​)​ ​return​ ​string 
- ​    ​for​(​ ​i​=​0​ ​;​ ​i​<​string​.​length​ ​;​ ​i​++​ ​)​ ​{ 
- ​        ​if​(​/​[​A-Z​]​/​.​test​(​string​[​i​]​)​)​ ​{ 
- ​            ​/​[​a-z​]​/​.​test​(​string​[​i​+​1​]​)​ ​&&​ ​string​[​i​+​1​]​ ? ​arr​.​push​(​string​[​i​]​ ​+​ ​string​[​i​+​1​]​)​ : ​arr​.​push​(​string​[​i​]​) 
- ​        ​}​ ​else​ ​if​(​Number​(​string​[​i​]​)​)​{ 
-						 let num;
+ const mole_arr = (string) => { 
+     let arr = [] 
+     if(parseFloat(string)) return string 
+     for( i=0 ; i<string.length ; i++ ) { 
+         if(/[A-Z]/.test(string[i])) { 
+             /[a-z]/.test(string[i+1]) && string[i+1] ? arr.push(string[i] + string[i+1]) : arr.push(string[i]) 
+         } else if(Number(string[i])){ 
+	     let num;
              for( k=0; !isNaN(Number(string[i+k])); k++) {
 		num += string[i+k];
              } 
- ​            ​arr​.​push​(​Number(num)) 
- ​        ​}​ ​else​ ​if​(​string​[​i​]​ ​===​ ​'('​)​ ​{ 
- ​            ​let​ ​fn​ ​=​ ​mole_loop​(​string​,​ ​i​+​1​) 
- ​            ​arr​.​push​(​fn​[​0​]​) 
- ​            ​i​ ​=​ ​fn​[​1​] 
- ​            ​if​(​fn​[​2​]​)​ ​{ 
- ​                ​arr​.​push​(​fn​[​2​]​) 
- ​            ​} 
- ​        ​} 
- ​    ​} 
- ​return​ ​arr 
- ​} 
- ​const​ ​mole_loop​ ​=​ ​(​string​,​ ​i​)​ ​=>​ ​{ 
- ​    ​let​ ​arr2​ ​=​ ​[​] 
- ​    ​let​ ​count​ ​=​ ​0​; 
- ​    ​for​(​j​=​i​;​ ​string​[​j​]​ ​!==​ ​')'​;​ ​j​++​)​ ​{ 
- ​        ​if​(​/​[​A-Z​]​/​.​test​(​string​[​j​]​)​)​ ​{ 
- ​            ​/​[​a-z​]​/​.​test​(​string​[​j​+​1​]​)​ ? ​arr2​.​push​(​string​[​j​]​ ​+​ ​string​[​j​+​1​]​)​ : ​arr2​.​push​(​string​[​j​]​) 
- ​        ​}​ ​else​ ​if​(​Number​(​string​[​j​]​)​)​{ 
- ​            ​let num;
+             arr.push(Number(num)) 
+         } else if(string[i] === '(') { 
+             let fn = mole_loop(string, i+1) 
+             arr.push(fn[0]) 
+             i = fn[1] 
+             if(fn[2]) { 
+                 arr.push(fn[2]) 
+             } 
+         } 
+     } 
+ return arr 
+ } 
+ const mole_loop = (string, i) => { 
+     let arr2 = [] 
+     let count = 0; 
+     for(j=i; string[j] !== ')'; j++) { 
+         if(/[A-Z]/.test(string[j])) { 
+             /[a-z]/.test(string[j+1]) ? arr2.push(string[j] + string[j+1]) : arr2.push(string[j]) 
+         } else if(Number(string[j])){ 
+             let num;
              for( k=0; !isNaN(Number(string[j+k])); k++) {
 		num += string[j+k];
              } 
- ​            ​arr2​.​push​(​Number(num)) 
- ​        ​}​ ​else​ ​if​(​string​[​j​]​ ​==​ ​'('​)​ ​{ 
- ​            ​let​ ​fn​ ​=​ ​mole_loop​(​string​,​ ​j​+​1​) 
- ​            ​arr2​.​push​(​fn​[​0​]​) 
- ​            ​j​ ​=​ ​fn​[​1​] 
- ​            ​if​(​fn​[​2​]​)​ ​{ 
- ​                ​arr2​.​push​(​fn​[​2​]​) 
- ​            ​} 
- ​        ​} 
- ​    ​count​ ​=​ ​j 
- ​    ​} 
- ​    ​if​(​Number​(​string​[​count​+​2​]​)​)​ ​{ 
- ​        ​return​ ​[​arr2​,​ ​count​ ​+​ ​2​,​ ​string​[​count​+​2​]​] 
- ​    ​} 
- ​    ​return​ ​[​arr2​,​ ​count​] 
- ​}
+             arr2.push(Number(num)) 
+         } else if(string[j] == '(') { 
+             let fn = mole_loop(string, j+1) 
+             arr2.push(fn[0]) 
+             j = fn[1] 
+             if(fn[2]) { 
+                 arr2.push(fn[2]) 
+             } 
+        } 
+     count = j 
+     } 
+     if(Number(string[count+2])) { 
+         return [arr2, count + 2, string[count+2]] 
+     } 
+     return [arr2, count] 
+ }
 
 const mole_obtainer = (array, id) => {
     let values = 0;
