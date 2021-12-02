@@ -275,7 +275,7 @@ function move() {
     let element = document.getElementById('response-container')
     let position = element.getBoundingClientRect();
     let e = document.getElementById('button-div') ;
-    if(position.top <= window.innerHeight && position.bottom >= 0) {
+    if(window.innerHeight - position.top >= 0 || position.top <= 0) {
         if(document.getElementById("not-bubble").classList.contains("visible")) document.getElementById("not-bubble").classList.toggle("visible");
 	    if(document.getElementById("button-div").childNodes[3].childNodes[1].classList.contains('down')) {
 e.childNodes[3].childNodes[1].classList.remove('down')  
