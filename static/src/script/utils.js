@@ -278,17 +278,19 @@ function move() {
     if(window.innerHeight - position.top >= 0 || position.top <= 0) {
         if(document.getElementById("not-bubble").classList.contains("visible")) document.getElementById("not-bubble").classList.toggle("visible");
 	    if(document.getElementById("button-div").childNodes[3].childNodes[1].classList.contains('down')) {
-e.childNodes[3].childNodes[1].classList.remove('down')  
-	 e.childNodes[3].childNodes[1].classList.add('up')
-	    e.childNodes[3].href = "#top"
-} 
+            e.childNodes[3].childNodes[1].classList.remove('down')  
+            e.childNodes[3].childNodes[1].classList.add('up')
+            e.childNodes[3].href = "#top"
+        } 
     } else {
 	    if(document.getElementById("button-div").childNodes[3].childNodes[1].classList.contains('up')) {
-e.childNodes[3].childNodes[1].classList.remove('up')  
-	 e.childNodes[3].childNodes[1].classList.add('down') 
-		e.childNodes[3].href = "#response-container"
+            e.childNodes[3].childNodes[1].classList.remove('up')  
+	        e.childNodes[3].childNodes[1].classList.add('down') 
+		    e.childNodes[3].href = "#response-container"
 
-} 
+        } 
     } 
 } 
-window.addEventListener('scroll', move())
+window.addEventListener('scroll', function () {
+    move();
+}, false);

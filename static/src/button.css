@@ -50,7 +50,7 @@ transition: all 100ms ease-in-out;
 }
 
 .up {
-    margin-top: 0;
+    margin-top: -5px;
 }
 
 .up:hover polyline,
