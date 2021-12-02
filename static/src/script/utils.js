@@ -270,20 +270,7 @@ function numberChangeEnd(element, value) {
     element.innerHTML = value || value === 0 ? value : '---'
 }
 
-function move(e) {
-    if(e.childNodes[1].classList.contains("visible")) {
-        e.childNodes[1].classList.toggle("visible");
-    }
-    if(e.childNodes[3].childNodes[1].classList.contains('up')) {
-	 e.childNodes[3].childNodes[1].classList.remove('up')  
-	 e.childNodes[3].childNodes[1].classList.add('down') 
-		e.childNodes[3].href = "#response-container"
-    } else if(e.childNodes[3].childNodes[1].classList.contains('down')) {
-	 e.childNodes[3].childNodes[1].classList.remove('down')  
-	 e.childNodes[3].childNodes[1].classList.add('up')
-	    e.childNodes[3].href = "#top"
-    }
-}
+
 function move() {
     let element = document.getElementById('response-container')
     let position = element.getBoundingClientRect();
@@ -304,13 +291,4 @@ e.childNodes[3].childNodes[1].classList.remove('up')
 } 
     } 
 } 
-window.addEventListener('scroll', function() {
-    let element = document.getElementById('response-container')
-    let position = element.getBoundingClientRect();
-    if(position.top < this.window.innerHeight && position.bottom >= 0) {
-        if(document.getElementById("not-bubble").classList.contains("visible")) document.getElementById("not-bubble").classList.toggle("visible");
-	    if(document.getElementById("button-div").childNodes[3].childNodes[1].classList.contains('down')) move(document.getElementById("button-div"));
-    } else {
-	    if(document.getElementById("button-div").childNodes[3].childNodes[1].classList.contains('up')) move(document.getElementById("button-div"));
-    }
-})
+window.addEventListener('scroll', move())
