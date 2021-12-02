@@ -168,8 +168,8 @@ let table = {
  ​            ​/​[​a-z​]​/​.​test​(​string​[​i​+​1​]​)​ ​&&​ ​string​[​i​+​1​]​ ? ​arr​.​push​(​string​[​i​]​ ​+​ ​string​[​i​+​1​]​)​ : ​arr​.​push​(​string​[​i​]​) 
  ​        ​}​ ​else​ ​if​(​Number​(​string​[​i​]​)​)​{ 
 						 let num;
-             for( k=0; isNaN(Number(string[i+k])); k++) {
-						     num += string[i+k];
+             for( k=0; !isNaN(Number(string[i+k])); k++) {
+		num += string[i+k];
              } 
  ​            ​arr​.​push​(​Number(num)) 
  ​        ​}​ ​else​ ​if​(​string​[​i​]​ ​===​ ​'('​)​ ​{ 
@@ -191,8 +191,8 @@ let table = {
  ​            ​/​[​a-z​]​/​.​test​(​string​[​j​+​1​]​)​ ? ​arr2​.​push​(​string​[​j​]​ ​+​ ​string​[​j​+​1​]​)​ : ​arr2​.​push​(​string​[​j​]​) 
  ​        ​}​ ​else​ ​if​(​Number​(​string​[​j​]​)​)​{ 
  ​            ​let num;
-             for( k=0; isNaN(Number(string[j+k])); k++) {
-						     num += string[j+k];
+             for( k=0; !isNaN(Number(string[j+k])); k++) {
+		num += string[j+k];
              } 
  ​            ​arr2​.​push​(​Number(num)) 
  ​        ​}​ ​else​ ​if​(​string​[​j​]​ ​==​ ​'('​)​ ​{ 
