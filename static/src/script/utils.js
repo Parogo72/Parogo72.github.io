@@ -167,7 +167,7 @@ let table = {
          if(/[A-Z]/.test(string[i])) { 
              /[a-z]/.test(string[i+1]) && string[i+1] ? arr.push(string[i] + string[i+1]) : arr.push(string[i]) 
          } else if(Number(string[i])){ 
-	     let num;
+	     let num = '';
              for( k=0; !isNaN(Number(string[i+k])); k++) {
 		num += string[i+k];
              } 
@@ -191,7 +191,7 @@ let table = {
          if(/[A-Z]/.test(string[j])) { 
              /[a-z]/.test(string[j+1]) ? arr2.push(string[j] + string[j+1]) : arr2.push(string[j]) 
          } else if(Number(string[j])){ 
-             let num;
+             let num = '';
              for( k=0; !isNaN(Number(string[j+k])); k++) {
 		num += string[j+k];
              } 
