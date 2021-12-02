@@ -171,6 +171,7 @@ let table = {
              for( k=0; !isNaN(Number(string[i+k])); k++) {
 		num += string[i+k];
              } 
+		 console.log(num)
              arr.push(Number(num)) 
          } else if(string[i] === '(') { 
              let fn = mole_loop(string, i+1) 
