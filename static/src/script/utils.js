@@ -194,7 +194,7 @@ let table = {
              for( k=0; isNaN(Number(string[j+k])); k++) {
 						     num += string[j+k];
              } 
- ​            ​arr​.​push​(​Number(num)) 
+ ​            ​arr2​.​push​(​Number(num)) 
  ​        ​}​ ​else​ ​if​(​string​[​j​]​ ​==​ ​'('​)​ ​{ 
  ​            ​let​ ​fn​ ​=​ ​mole_loop​(​string​,​ ​j​+​1​) 
  ​            ​arr2​.​push​(​fn​[​0​]​) 
