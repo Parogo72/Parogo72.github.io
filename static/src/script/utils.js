@@ -171,7 +171,6 @@ let table = {
              for( k=0; !isNaN(Number(string[i+k])); k++) {
 		num += string[i+k];
              } 
-		 console.log(num)
              arr.push(Number(num)) 
          } else if(string[i] === '(') { 
              let fn = mole_loop(string, i+1) 
@@ -272,10 +271,8 @@ function numberChangeEnd(element, value) {
 }
 
 function move(e) {
-    console.log(e.childNodes[1])
     if(e.childNodes[1].classList.contains("visible")) {
         e.childNodes[1].classList.toggle("visible");
-        console.log(e.childNodes[3].childNodes[1])
     }
 }
 
