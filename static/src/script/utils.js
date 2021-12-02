@@ -274,7 +274,7 @@ function move(e) {
     if(e.childNodes[1].classList.contains("visible")) {
         e.childNodes[1].classList.toggle("visible");
     }
-	console.log(e,childNodes[3]
+	console.log(e,childNodes[3])
     if(e.childNodes[3].childNodes[1].classList.contains('up')) {
 	 e.childNodes[3].childNodes[1].classList.remove('up')  
 	 e.childNodes[3].childNodes[1].classList.add('down') 
