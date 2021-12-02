@@ -49,6 +49,21 @@ stroke-width: 15;
 transition: all 100ms ease-in-out;
 }
 
+.up {
+    margin-top: 0;
+}
+
+.up:hover polyline,
+.up:focus polyline {
+stroke-width: 15;
+}
+
+.up:active polyline {
+stroke-width: 15;
+transition: all 100ms ease-in-out;
+}
+
+
 .notification {
     overflow: visible;
     display: none;
