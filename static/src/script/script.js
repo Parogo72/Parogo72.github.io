@@ -69,7 +69,6 @@ function end() {
     } else if(element.value) {
       element.parentNode.classList.add("calculated");
       if(!document.getElementById("not-bubble").classList.contains("visible")) document.getElementById("not-bubble").classList.toggle("visible");
-      console.log(element, element.value)
     }
     i[1].lastValue = i[1].value
     x++
