@@ -216,7 +216,7 @@ const mole_obtainer = (array, id) => {
                 values += num * array[i+1];
             } else if(num){
                 values += num
-            } else {
+            } else if(!parseInt(array[i])){
                 return values || null
             }
         }   
